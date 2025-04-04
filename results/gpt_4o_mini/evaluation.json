@@ -1,0 +1,2808 @@
+{
+  "model": "gpt-4o-mini",
+  "temperature": 0.8,
+  "max_tokens": 1024,
+  "evaluation_results": {
+    "pass@1": 0.8780487804878049
+  },
+  "problem_metrics": [
+    {
+      "input_tokens": 132,
+      "output_tokens": 492,
+      "response_time": 6.408639907836914,
+      "time_to_first_token": 0.8452060222625732,
+      "problem_id": "HumanEval/0"
+    },
+    {
+      "input_tokens": 123,
+      "output_tokens": 487,
+      "response_time": 6.460422039031982,
+      "time_to_first_token": 0.7129001617431641,
+      "problem_id": "HumanEval/1"
+    },
+    {
+      "input_tokens": 94,
+      "output_tokens": 411,
+      "response_time": 6.048826217651367,
+      "time_to_first_token": 0.36610889434814453,
+      "problem_id": "HumanEval/2"
+    },
+    {
+      "input_tokens": 127,
+      "output_tokens": 379,
+      "response_time": 4.387210130691528,
+      "time_to_first_token": 0.4099411964416504,
+      "problem_id": "HumanEval/3"
+    },
+    {
+      "input_tokens": 125,
+      "output_tokens": 389,
+      "response_time": 6.161102056503296,
+      "time_to_first_token": 0.5435640811920166,
+      "problem_id": "HumanEval/4"
+    },
+    {
+      "input_tokens": 100,
+      "output_tokens": 358,
+      "response_time": 6.265549898147583,
+      "time_to_first_token": 0.7830648422241211,
+      "problem_id": "HumanEval/5"
+    },
+    {
+      "input_tokens": 120,
+      "output_tokens": 455,
+      "response_time": 6.018758296966553,
+      "time_to_first_token": 0.4529731273651123,
+      "problem_id": "HumanEval/6"
+    },
+    {
+      "input_tokens": 101,
+      "output_tokens": 333,
+      "response_time": 14.923032999038696,
+      "time_to_first_token": 0.688713788986206,
+      "problem_id": "HumanEval/7"
+    },
+    {
+      "input_tokens": 118,
+      "output_tokens": 332,
+      "response_time": 5.289635896682739,
+      "time_to_first_token": 0.429063081741333,
+      "problem_id": "HumanEval/8"
+    },
+    {
+      "input_tokens": 108,
+      "output_tokens": 459,
+      "response_time": 6.295656204223633,
+      "time_to_first_token": 0.5527291297912598,
+      "problem_id": "HumanEval/9"
+    },
+    {
+      "input_tokens": 151,
+      "output_tokens": 538,
+      "response_time": 8.484961032867432,
+      "time_to_first_token": 0.3541998863220215,
+      "problem_id": "HumanEval/10"
+    },
+    {
+      "input_tokens": 84,
+      "output_tokens": 402,
+      "response_time": 5.703063011169434,
+      "time_to_first_token": 0.3837587833404541,
+      "problem_id": "HumanEval/11"
+    },
+    {
+      "input_tokens": 110,
+      "output_tokens": 396,
+      "response_time": 4.915116786956787,
+      "time_to_first_token": 0.4559488296508789,
+      "problem_id": "HumanEval/12"
+    },
+    {
+      "input_tokens": 79,
+      "output_tokens": 395,
+      "response_time": 5.589785099029541,
+      "time_to_first_token": 0.35111308097839355,
+      "problem_id": "HumanEval/13"
+    },
+    {
+      "input_tokens": 67,
+      "output_tokens": 309,
+      "response_time": 4.224295139312744,
+      "time_to_first_token": 0.40922093391418457,
+      "problem_id": "HumanEval/14"
+    },
+    {
+      "input_tokens": 77,
+      "output_tokens": 219,
+      "response_time": 3.781337022781372,
+      "time_to_first_token": 0.4061598777770996,
+      "problem_id": "HumanEval/15"
+    },
+    {
+      "input_tokens": 79,
+      "output_tokens": 300,
+      "response_time": 4.313772201538086,
+      "time_to_first_token": 0.42662882804870605,
+      "problem_id": "HumanEval/16"
+    },
+    {
+      "input_tokens": 180,
+      "output_tokens": 538,
+      "response_time": 7.025284051895142,
+      "time_to_first_token": 0.43762803077697754,
+      "problem_id": "HumanEval/17"
+    },
+    {
+      "input_tokens": 97,
+      "output_tokens": 443,
+      "response_time": 7.609920024871826,
+      "time_to_first_token": 0.38827991485595703,
+      "problem_id": "HumanEval/18"
+    },
+    {
+      "input_tokens": 113,
+      "output_tokens": 516,
+      "response_time": 13.332211017608643,
+      "time_to_first_token": 6.447324991226196,
+      "problem_id": "HumanEval/19"
+    },
+    {
+      "input_tokens": 174,
+      "output_tokens": 639,
+      "response_time": 16.198643922805786,
+      "time_to_first_token": 0.6389539241790771,
+      "problem_id": "HumanEval/20"
+    },
+    {
+      "input_tokens": 131,
+      "output_tokens": 503,
+      "response_time": 7.321782112121582,
+      "time_to_first_token": 0.3663370609283447,
+      "problem_id": "HumanEval/21"
+    },
+    {
+      "input_tokens": 99,
+      "output_tokens": 274,
+      "response_time": 5.143683910369873,
+      "time_to_first_token": 0.37126779556274414,
+      "problem_id": "HumanEval/22"
+    },
+    {
+      "input_tokens": 52,
+      "output_tokens": 166,
+      "response_time": 2.74759578704834,
+      "time_to_first_token": 0.3006777763366699,
+      "problem_id": "HumanEval/23"
+    },
+    {
+      "input_tokens": 61,
+      "output_tokens": 447,
+      "response_time": 6.652837753295898,
+      "time_to_first_token": 0.36024975776672363,
+      "problem_id": "HumanEval/24"
+    },
+    {
+      "input_tokens": 134,
+      "output_tokens": 639,
+      "response_time": 10.826468229293823,
+      "time_to_first_token": 0.4680750370025635,
+      "problem_id": "HumanEval/25"
+    },
+    {
+      "input_tokens": 92,
+      "output_tokens": 353,
+      "response_time": 6.186002969741821,
+      "time_to_first_token": 0.33741092681884766,
+      "problem_id": "HumanEval/26"
+    },
+    {
+      "input_tokens": 57,
+      "output_tokens": 264,
+      "response_time": 9.41047191619873,
+      "time_to_first_token": 0.39188098907470703,
+      "problem_id": "HumanEval/27"
+    },
+    {
+      "input_tokens": 65,
+      "output_tokens": 239,
+      "response_time": 4.683902025222778,
+      "time_to_first_token": 0.43930602073669434,
+      "problem_id": "HumanEval/28"
+    },
+    {
+      "input_tokens": 95,
+      "output_tokens": 308,
+      "response_time": 4.2761390209198,
+      "time_to_first_token": 0.357666015625,
+      "problem_id": "HumanEval/29"
+    },
+    {
+      "input_tokens": 122,
+      "output_tokens": 274,
+      "response_time": 4.696648836135864,
+      "time_to_first_token": 0.5447590351104736,
+      "problem_id": "HumanEval/30"
+    },
+    {
+      "input_tokens": 108,
+      "output_tokens": 473,
+      "response_time": 8.053368091583252,
+      "time_to_first_token": 0.3310708999633789,
+      "problem_id": "HumanEval/31"
+    },
+    {
+      "input_tokens": 267,
+      "output_tokens": 816,
+      "response_time": 15.480569839477539,
+      "time_to_first_token": 0.5040130615234375,
+      "problem_id": "HumanEval/32"
+    },
+    {
+      "input_tokens": 159,
+      "output_tokens": 564,
+      "response_time": 9.842303276062012,
+      "time_to_first_token": 0.306408166885376,
+      "problem_id": "HumanEval/33"
+    },
+    {
+      "input_tokens": 82,
+      "output_tokens": 268,
+      "response_time": 5.38952112197876,
+      "time_to_first_token": 0.4225039482116699,
+      "problem_id": "HumanEval/34"
+    },
+    {
+      "input_tokens": 91,
+      "output_tokens": 330,
+      "response_time": 6.693501234054565,
+      "time_to_first_token": 0.3812422752380371,
+      "problem_id": "HumanEval/35"
+    },
+    {
+      "input_tokens": 88,
+      "output_tokens": 432,
+      "response_time": 7.632482051849365,
+      "time_to_first_token": 0.872441291809082,
+      "problem_id": "HumanEval/36"
+    },
+    {
+      "input_tokens": 132,
+      "output_tokens": 692,
+      "response_time": 11.21195387840271,
+      "time_to_first_token": 0.4282848834991455,
+      "problem_id": "HumanEval/37"
+    },
+    {
+      "input_tokens": 167,
+      "output_tokens": 352,
+      "response_time": 7.568634748458862,
+      "time_to_first_token": 0.5163319110870361,
+      "problem_id": "HumanEval/38"
+    },
+    {
+      "input_tokens": 106,
+      "output_tokens": 532,
+      "response_time": 9.316965103149414,
+      "time_to_first_token": 0.4367680549621582,
+      "problem_id": "HumanEval/39"
+    },
+    {
+      "input_tokens": 168,
+      "output_tokens": 617,
+      "response_time": 9.774581670761108,
+      "time_to_first_token": 0.4407217502593994,
+      "problem_id": "HumanEval/40"
+    },
+    {
+      "input_tokens": 160,
+      "output_tokens": 344,
+      "response_time": 5.016481876373291,
+      "time_to_first_token": 0.42331981658935547,
+      "problem_id": "HumanEval/41"
+    },
+    {
+      "input_tokens": 117,
+      "output_tokens": 284,
+      "response_time": 5.297466039657593,
+      "time_to_first_token": 0.7459421157836914,
+      "problem_id": "HumanEval/42"
+    },
+    {
+      "input_tokens": 166,
+      "output_tokens": 479,
+      "response_time": 8.698102712631226,
+      "time_to_first_token": 0.38445591926574707,
+      "problem_id": "HumanEval/43"
+    },
+    {
+      "input_tokens": 100,
+      "output_tokens": 487,
+      "response_time": 7.3487701416015625,
+      "time_to_first_token": 0.4057319164276123,
+      "problem_id": "HumanEval/44"
+    },
+    {
+      "input_tokens": 55,
+      "output_tokens": 217,
+      "response_time": 7.437741041183472,
+      "time_to_first_token": 0.711414098739624,
+      "problem_id": "HumanEval/45"
+    },
+    {
+      "input_tokens": 180,
+      "output_tokens": 481,
+      "response_time": 7.942539930343628,
+      "time_to_first_token": 1.2198610305786133,
+      "problem_id": "HumanEval/46"
+    },
+    {
+      "input_tokens": 84,
+      "output_tokens": 414,
+      "response_time": 15.628339290618896,
+      "time_to_first_token": 2.00168514251709,
+      "problem_id": "HumanEval/47"
+    },
+    {
+      "input_tokens": 80,
+      "output_tokens": 246,
+      "response_time": 5.114252090454102,
+      "time_to_first_token": 0.412229061126709,
+      "problem_id": "HumanEval/48"
+    },
+    {
+      "input_tokens": 114,
+      "output_tokens": 339,
+      "response_time": 11.166544914245605,
+      "time_to_first_token": 0.4502298831939697,
+      "problem_id": "HumanEval/49"
+    },
+    {
+      "input_tokens": 99,
+      "output_tokens": 384,
+      "response_time": 11.220181941986084,
+      "time_to_first_token": 0.32531094551086426,
+      "problem_id": "HumanEval/50"
+    },
+    {
+      "input_tokens": 131,
+      "output_tokens": 291,
+      "response_time": 4.7580790519714355,
+      "time_to_first_token": 0.4201531410217285,
+      "problem_id": "HumanEval/51"
+    },
+    {
+      "input_tokens": 88,
+      "output_tokens": 301,
+      "response_time": 10.050950765609741,
+      "time_to_first_token": 0.5969750881195068,
+      "problem_id": "HumanEval/52"
+    },
+    {
+      "input_tokens": 62,
+      "output_tokens": 268,
+      "response_time": 4.395657062530518,
+      "time_to_first_token": 0.3929789066314697,
+      "problem_id": "HumanEval/53"
+    },
+    {
+      "input_tokens": 149,
+      "output_tokens": 456,
+      "response_time": 7.554427146911621,
+      "time_to_first_token": 0.35505008697509766,
+      "problem_id": "HumanEval/54"
+    },
+    {
+      "input_tokens": 61,
+      "output_tokens": 355,
+      "response_time": 7.190587997436523,
+      "time_to_first_token": 0.46129679679870605,
+      "problem_id": "HumanEval/55"
+    },
+    {
+      "input_tokens": 101,
+      "output_tokens": 387,
+      "response_time": 10.263796091079712,
+      "time_to_first_token": 0.34871983528137207,
+      "problem_id": "HumanEval/56"
+    },
+    {
+      "input_tokens": 96,
+      "output_tokens": 449,
+      "response_time": 6.69527792930603,
+      "time_to_first_token": 0.3459610939025879,
+      "problem_id": "HumanEval/57"
+    },
+    {
+      "input_tokens": 123,
+      "output_tokens": 414,
+      "response_time": 7.3034586906433105,
+      "time_to_first_token": 0.6644108295440674,
+      "problem_id": "HumanEval/58"
+    },
+    {
+      "input_tokens": 72,
+      "output_tokens": 518,
+      "response_time": 10.564024209976196,
+      "time_to_first_token": 0.39675021171569824,
+      "problem_id": "HumanEval/59"
+    },
+    {
+      "input_tokens": 103,
+      "output_tokens": 228,
+      "response_time": 4.177515029907227,
+      "time_to_first_token": 0.5308449268341064,
+      "problem_id": "HumanEval/60"
+    },
+    {
+      "input_tokens": 98,
+      "output_tokens": 411,
+      "response_time": 6.343921184539795,
+      "time_to_first_token": 0.35370802879333496,
+      "problem_id": "HumanEval/61"
+    },
+    {
+      "input_tokens": 117,
+      "output_tokens": 442,
+      "response_time": 7.670650243759155,
+      "time_to_first_token": 0.40009498596191406,
+      "problem_id": "HumanEval/62"
+    },
+    {
+      "input_tokens": 158,
+      "output_tokens": 461,
+      "response_time": 6.094933986663818,
+      "time_to_first_token": 0.5248599052429199,
+      "problem_id": "HumanEval/63"
+    },
+    {
+      "input_tokens": 135,
+      "output_tokens": 659,
+      "response_time": 10.90599513053894,
+      "time_to_first_token": 0.4017820358276367,
+      "problem_id": "HumanEval/64"
+    },
+    {
+      "input_tokens": 91,
+      "output_tokens": 556,
+      "response_time": 9.500552892684937,
+      "time_to_first_token": 0.6718499660491943,
+      "problem_id": "HumanEval/65"
+    },
+    {
+      "input_tokens": 121,
+      "output_tokens": 281,
+      "response_time": 4.4558961391448975,
+      "time_to_first_token": 0.3612821102142334,
+      "problem_id": "HumanEval/66"
+    },
+    {
+      "input_tokens": 219,
+      "output_tokens": 368,
+      "response_time": 5.488193035125732,
+      "time_to_first_token": 0.6531000137329102,
+      "problem_id": "HumanEval/67"
+    },
+    {
+      "input_tokens": 321,
+      "output_tokens": 647,
+      "response_time": 9.583686113357544,
+      "time_to_first_token": 0.4372122287750244,
+      "problem_id": "HumanEval/68"
+    },
+    {
+      "input_tokens": 174,
+      "output_tokens": 402,
+      "response_time": 5.252902984619141,
+      "time_to_first_token": 0.3631000518798828,
+      "problem_id": "HumanEval/69"
+    },
+    {
+      "input_tokens": 133,
+      "output_tokens": 548,
+      "response_time": 8.438261985778809,
+      "time_to_first_token": 0.3193988800048828,
+      "problem_id": "HumanEval/70"
+    },
+    {
+      "input_tokens": 130,
+      "output_tokens": 462,
+      "response_time": 8.445791959762573,
+      "time_to_first_token": 0.4307568073272705,
+      "problem_id": "HumanEval/71"
+    },
+    {
+      "input_tokens": 239,
+      "output_tokens": 571,
+      "response_time": 7.751943826675415,
+      "time_to_first_token": 0.38486790657043457,
+      "problem_id": "HumanEval/72"
+    },
+    {
+      "input_tokens": 166,
+      "output_tokens": 408,
+      "response_time": 8.64597773551941,
+      "time_to_first_token": 0.3795788288116455,
+      "problem_id": "HumanEval/73"
+    },
+    {
+      "input_tokens": 202,
+      "output_tokens": 581,
+      "response_time": 8.700152158737183,
+      "time_to_first_token": 0.42840003967285156,
+      "problem_id": "HumanEval/74"
+    },
+    {
+      "input_tokens": 88,
+      "output_tokens": 487,
+      "response_time": 7.192456245422363,
+      "time_to_first_token": 0.3474862575531006,
+      "problem_id": "HumanEval/75"
+    },
+    {
+      "input_tokens": 151,
+      "output_tokens": 494,
+      "response_time": 8.302793025970459,
+      "time_to_first_token": 0.4389920234680176,
+      "problem_id": "HumanEval/76"
+    },
+    {
+      "input_tokens": 119,
+      "output_tokens": 464,
+      "response_time": 8.28183913230896,
+      "time_to_first_token": 0.539710283279419,
+      "problem_id": "HumanEval/77"
+    },
+    {
+      "input_tokens": 308,
+      "output_tokens": 373,
+      "response_time": 6.541334867477417,
+      "time_to_first_token": 0.39722609519958496,
+      "problem_id": "HumanEval/78"
+    },
+    {
+      "input_tokens": 148,
+      "output_tokens": 399,
+      "response_time": 7.090100049972534,
+      "time_to_first_token": 0.4139420986175537,
+      "problem_id": "HumanEval/79"
+    },
+    {
+      "input_tokens": 130,
+      "output_tokens": 504,
+      "response_time": 8.598396062850952,
+      "time_to_first_token": 0.4052431583404541,
+      "problem_id": "HumanEval/80"
+    },
+    {
+      "input_tokens": 279,
+      "output_tokens": 550,
+      "response_time": 9.261376142501831,
+      "time_to_first_token": 0.35396504402160645,
+      "problem_id": "HumanEval/81"
+    },
+    {
+      "input_tokens": 90,
+      "output_tokens": 377,
+      "response_time": 8.168236017227173,
+      "time_to_first_token": 0.44008302688598633,
+      "problem_id": "HumanEval/82"
+    },
+    {
+      "input_tokens": 53,
+      "output_tokens": 701,
+      "response_time": 14.604327917098999,
+      "time_to_first_token": 0.3253331184387207,
+      "problem_id": "HumanEval/83"
+    },
+    {
+      "input_tokens": 142,
+      "output_tokens": 404,
+      "response_time": 8.047394037246704,
+      "time_to_first_token": 0.5592288970947266,
+      "problem_id": "HumanEval/84"
+    },
+    {
+      "input_tokens": 64,
+      "output_tokens": 284,
+      "response_time": 5.4597320556640625,
+      "time_to_first_token": 0.5118081569671631,
+      "problem_id": "HumanEval/85"
+    },
+    {
+      "input_tokens": 139,
+      "output_tokens": 381,
+      "response_time": 11.10747766494751,
+      "time_to_first_token": 0.44548583030700684,
+      "problem_id": "HumanEval/86"
+    },
+    {
+      "input_tokens": 268,
+      "output_tokens": 466,
+      "response_time": 7.51229190826416,
+      "time_to_first_token": 0.35048794746398926,
+      "problem_id": "HumanEval/87"
+    },
+    {
+      "input_tokens": 212,
+      "output_tokens": 531,
+      "response_time": 12.235410213470459,
+      "time_to_first_token": 0.4840669631958008,
+      "problem_id": "HumanEval/88"
+    },
+    {
+      "input_tokens": 119,
+      "output_tokens": 459,
+      "response_time": 7.3120551109313965,
+      "time_to_first_token": 0.4622201919555664,
+      "problem_id": "HumanEval/89"
+    },
+    {
+      "input_tokens": 133,
+      "output_tokens": 337,
+      "response_time": 8.547930002212524,
+      "time_to_first_token": 0.3921341896057129,
+      "problem_id": "HumanEval/90"
+    },
+    {
+      "input_tokens": 116,
+      "output_tokens": 473,
+      "response_time": 8.256440162658691,
+      "time_to_first_token": 0.3753173351287842,
+      "problem_id": "HumanEval/91"
+    },
+    {
+      "input_tokens": 144,
+      "output_tokens": 393,
+      "response_time": 6.949277877807617,
+      "time_to_first_token": 0.428175687789917,
+      "problem_id": "HumanEval/92"
+    },
+    {
+      "input_tokens": 118,
+      "output_tokens": 353,
+      "response_time": 6.0346949100494385,
+      "time_to_first_token": 0.4582688808441162,
+      "problem_id": "HumanEval/93"
+    },
+    {
+      "input_tokens": 295,
+      "output_tokens": 693,
+      "response_time": 9.93135380744934,
+      "time_to_first_token": 0.423738956451416,
+      "problem_id": "HumanEval/94"
+    },
+    {
+      "input_tokens": 178,
+      "output_tokens": 523,
+      "response_time": 7.2528369426727295,
+      "time_to_first_token": 0.35515403747558594,
+      "problem_id": "HumanEval/95"
+    },
+    {
+      "input_tokens": 154,
+      "output_tokens": 467,
+      "response_time": 7.606952905654907,
+      "time_to_first_token": 0.4689667224884033,
+      "problem_id": "HumanEval/96"
+    },
+    {
+      "input_tokens": 107,
+      "output_tokens": 415,
+      "response_time": 13.50206708908081,
+      "time_to_first_token": 0.48280811309814453,
+      "problem_id": "HumanEval/97"
+    },
+    {
+      "input_tokens": 81,
+      "output_tokens": 310,
+      "response_time": 4.393060207366943,
+      "time_to_first_token": 0.33095407485961914,
+      "problem_id": "HumanEval/98"
+    },
+    {
+      "input_tokens": 165,
+      "output_tokens": 426,
+      "response_time": 6.272460222244263,
+      "time_to_first_token": 0.43535614013671875,
+      "problem_id": "HumanEval/99"
+    },
+    {
+      "input_tokens": 141,
+      "output_tokens": 487,
+      "response_time": 9.321876049041748,
+      "time_to_first_token": 0.5332379341125488,
+      "problem_id": "HumanEval/100"
+    },
+    {
+      "input_tokens": 125,
+      "output_tokens": 469,
+      "response_time": 9.873142957687378,
+      "time_to_first_token": 0.4600050449371338,
+      "problem_id": "HumanEval/101"
+    },
+    {
+      "input_tokens": 103,
+      "output_tokens": 408,
+      "response_time": 7.513340950012207,
+      "time_to_first_token": 0.49004101753234863,
+      "problem_id": "HumanEval/102"
+    },
+    {
+      "input_tokens": 149,
+      "output_tokens": 497,
+      "response_time": 8.852552890777588,
+      "time_to_first_token": 0.5756011009216309,
+      "problem_id": "HumanEval/103"
+    },
+    {
+      "input_tokens": 111,
+      "output_tokens": 412,
+      "response_time": 9.920767068862915,
+      "time_to_first_token": 0.41301584243774414,
+      "problem_id": "HumanEval/104"
+    },
+    {
+      "input_tokens": 285,
+      "output_tokens": 675,
+      "response_time": 13.76591682434082,
+      "time_to_first_token": 0.4105851650238037,
+      "problem_id": "HumanEval/105"
+    },
+    {
+      "input_tokens": 133,
+      "output_tokens": 380,
+      "response_time": 12.63480806350708,
+      "time_to_first_token": 0.4062621593475342,
+      "problem_id": "HumanEval/106"
+    },
+    {
+      "input_tokens": 220,
+      "output_tokens": 412,
+      "response_time": 6.757436990737915,
+      "time_to_first_token": 0.44629716873168945,
+      "problem_id": "HumanEval/107"
+    },
+    {
+      "input_tokens": 133,
+      "output_tokens": 474,
+      "response_time": 9.364351987838745,
+      "time_to_first_token": 0.5342299938201904,
+      "problem_id": "HumanEval/108"
+    },
+    {
+      "input_tokens": 308,
+      "output_tokens": 467,
+      "response_time": 8.676153182983398,
+      "time_to_first_token": 1.3760712146759033,
+      "problem_id": "HumanEval/109"
+    },
+    {
+      "input_tokens": 206,
+      "output_tokens": 501,
+      "response_time": 10.440423965454102,
+      "time_to_first_token": 0.45566606521606445,
+      "problem_id": "HumanEval/110"
+    },
+    {
+      "input_tokens": 160,
+      "output_tokens": 503,
+      "response_time": 9.183872938156128,
+      "time_to_first_token": 0.391948938369751,
+      "problem_id": "HumanEval/111"
+    },
+    {
+      "input_tokens": 171,
+      "output_tokens": 293,
+      "response_time": 4.95786190032959,
+      "time_to_first_token": 0.3331630229949951,
+      "problem_id": "HumanEval/112"
+    },
+    {
+      "input_tokens": 182,
+      "output_tokens": 430,
+      "response_time": 11.132673740386963,
+      "time_to_first_token": 0.456744909286499,
+      "problem_id": "HumanEval/113"
+    },
+    {
+      "input_tokens": 97,
+      "output_tokens": 493,
+      "response_time": 12.663919925689697,
+      "time_to_first_token": 0.39093804359436035,
+      "problem_id": "HumanEval/114"
+    },
+    {
+      "input_tokens": 332,
+      "output_tokens": 506,
+      "response_time": 10.373762130737305,
+      "time_to_first_token": 0.47642993927001953,
+      "problem_id": "HumanEval/115"
+    },
+    {
+      "input_tokens": 179,
+      "output_tokens": 471,
+      "response_time": 6.8565919399261475,
+      "time_to_first_token": 0.3898959159851074,
+      "problem_id": "HumanEval/116"
+    },
+    {
+      "input_tokens": 190,
+      "output_tokens": 497,
+      "response_time": 8.141731977462769,
+      "time_to_first_token": 0.5823860168457031,
+      "problem_id": "HumanEval/117"
+    },
+    {
+      "input_tokens": 158,
+      "output_tokens": 473,
+      "response_time": 10.399149179458618,
+      "time_to_first_token": 0.40375232696533203,
+      "problem_id": "HumanEval/118"
+    },
+    {
+      "input_tokens": 177,
+      "output_tokens": 475,
+      "response_time": 11.791356086730957,
+      "time_to_first_token": 0.38352203369140625,
+      "problem_id": "HumanEval/119"
+    },
+    {
+      "input_tokens": 226,
+      "output_tokens": 437,
+      "response_time": 6.695756196975708,
+      "time_to_first_token": 0.38387131690979004,
+      "problem_id": "HumanEval/120"
+    },
+    {
+      "input_tokens": 106,
+      "output_tokens": 471,
+      "response_time": 8.863792181015015,
+      "time_to_first_token": 0.3420882225036621,
+      "problem_id": "HumanEval/121"
+    },
+    {
+      "input_tokens": 137,
+      "output_tokens": 439,
+      "response_time": 9.296727895736694,
+      "time_to_first_token": 0.42424511909484863,
+      "problem_id": "HumanEval/122"
+    },
+    {
+      "input_tokens": 240,
+      "output_tokens": 471,
+      "response_time": 14.065585851669312,
+      "time_to_first_token": 0.467818021774292,
+      "problem_id": "HumanEval/123"
+    },
+    {
+      "input_tokens": 272,
+      "output_tokens": 658,
+      "response_time": 46.71295499801636,
+      "time_to_first_token": 1.4538781642913818,
+      "problem_id": "HumanEval/124"
+    },
+    {
+      "input_tokens": 149,
+      "output_tokens": 433,
+      "response_time": 6.458328008651733,
+      "time_to_first_token": 0.4716329574584961,
+      "problem_id": "HumanEval/125"
+    },
+    {
+      "input_tokens": 258,
+      "output_tokens": 572,
+      "response_time": 10.56355094909668,
+      "time_to_first_token": 0.43343162536621094,
+      "problem_id": "HumanEval/126"
+    },
+    {
+      "input_tokens": 263,
+      "output_tokens": 549,
+      "response_time": 14.753566980361938,
+      "time_to_first_token": 0.5357089042663574,
+      "problem_id": "HumanEval/127"
+    },
+    {
+      "input_tokens": 131,
+      "output_tokens": 516,
+      "response_time": 16.504725217819214,
+      "time_to_first_token": 0.5264079570770264,
+      "problem_id": "HumanEval/128"
+    },
+    {
+      "input_tokens": 405,
+      "output_tokens": 729,
+      "response_time": 11.112507104873657,
+      "time_to_first_token": 0.5251011848449707,
+      "problem_id": "HumanEval/129"
+    },
+    {
+      "input_tokens": 244,
+      "output_tokens": 586,
+      "response_time": 14.295993089675903,
+      "time_to_first_token": 0.48798394203186035,
+      "problem_id": "HumanEval/130"
+    },
+    {
+      "input_tokens": 80,
+      "output_tokens": 334,
+      "response_time": 5.8191118240356445,
+      "time_to_first_token": 0.682528018951416,
+      "problem_id": "HumanEval/131"
+    },
+    {
+      "input_tokens": 142,
+      "output_tokens": 484,
+      "response_time": 7.6719560623168945,
+      "time_to_first_token": 0.37758326530456543,
+      "problem_id": "HumanEval/132"
+    },
+    {
+      "input_tokens": 166,
+      "output_tokens": 378,
+      "response_time": 12.464641094207764,
+      "time_to_first_token": 0.46570539474487305,
+      "problem_id": "HumanEval/133"
+    },
+    {
+      "input_tokens": 146,
+      "output_tokens": 539,
+      "response_time": 23.80996298789978,
+      "time_to_first_token": 0.6850991249084473,
+      "problem_id": "HumanEval/134"
+    },
+    {
+      "input_tokens": 112,
+      "output_tokens": 399,
+      "response_time": 10.835237264633179,
+      "time_to_first_token": 0.4173252582550049,
+      "problem_id": "HumanEval/135"
+    },
+    {
+      "input_tokens": 147,
+      "output_tokens": 395,
+      "response_time": 6.1944739818573,
+      "time_to_first_token": 0.5598316192626953,
+      "problem_id": "HumanEval/136"
+    },
+    {
+      "input_tokens": 150,
+      "output_tokens": 499,
+      "response_time": 10.172945976257324,
+      "time_to_first_token": 0.7210628986358643,
+      "problem_id": "HumanEval/137"
+    },
+    {
+      "input_tokens": 86,
+      "output_tokens": 455,
+      "response_time": 7.494703054428101,
+      "time_to_first_token": 0.3940458297729492,
+      "problem_id": "HumanEval/138"
+    },
+    {
+      "input_tokens": 104,
+      "output_tokens": 440,
+      "response_time": 9.335049867630005,
+      "time_to_first_token": 0.4966588020324707,
+      "problem_id": "HumanEval/139"
+    },
+    {
+      "input_tokens": 115,
+      "output_tokens": 376,
+      "response_time": 10.17556881904602,
+      "time_to_first_token": 0.6794757843017578,
+      "problem_id": "HumanEval/140"
+    },
+    {
+      "input_tokens": 223,
+      "output_tokens": 433,
+      "response_time": 9.986987113952637,
+      "time_to_first_token": 0.5859031677246094,
+      "problem_id": "HumanEval/141"
+    },
+    {
+      "input_tokens": 178,
+      "output_tokens": 402,
+      "response_time": 12.218848943710327,
+      "time_to_first_token": 0.5859470367431641,
+      "problem_id": "HumanEval/142"
+    },
+    {
+      "input_tokens": 156,
+      "output_tokens": 388,
+      "response_time": 6.805418014526367,
+      "time_to_first_token": 0.4196805953979492,
+      "problem_id": "HumanEval/143"
+    },
+    {
+      "input_tokens": 164,
+      "output_tokens": 408,
+      "response_time": 8.454299926757812,
+      "time_to_first_token": 0.4979588985443115,
+      "problem_id": "HumanEval/144"
+    },
+    {
+      "input_tokens": 124,
+      "output_tokens": 370,
+      "response_time": 7.344842195510864,
+      "time_to_first_token": 0.4271233081817627,
+      "problem_id": "HumanEval/145"
+    },
+    {
+      "input_tokens": 128,
+      "output_tokens": 422,
+      "response_time": 6.354258298873901,
+      "time_to_first_token": 0.39984607696533203,
+      "problem_id": "HumanEval/146"
+    },
+    {
+      "input_tokens": 174,
+      "output_tokens": 507,
+      "response_time": 8.123557090759277,
+      "time_to_first_token": 0.4116499423980713,
+      "problem_id": "HumanEval/147"
+    },
+    {
+      "input_tokens": 220,
+      "output_tokens": 485,
+      "response_time": 8.932281017303467,
+      "time_to_first_token": 0.4966440200805664,
+      "problem_id": "HumanEval/148"
+    },
+    {
+      "input_tokens": 196,
+      "output_tokens": 306,
+      "response_time": 6.397118091583252,
+      "time_to_first_token": 0.5920200347900391,
+      "problem_id": "HumanEval/149"
+    },
+    {
+      "input_tokens": 95,
+      "output_tokens": 393,
+      "response_time": 5.417688846588135,
+      "time_to_first_token": 0.3903059959411621,
+      "problem_id": "HumanEval/150"
+    },
+    {
+      "input_tokens": 146,
+      "output_tokens": 524,
+      "response_time": 16.15858006477356,
+      "time_to_first_token": 0.514214277267456,
+      "problem_id": "HumanEval/151"
+    },
+    {
+      "input_tokens": 239,
+      "output_tokens": 344,
+      "response_time": 5.679527759552002,
+      "time_to_first_token": 1.0488598346710205,
+      "problem_id": "HumanEval/152"
+    },
+    {
+      "input_tokens": 286,
+      "output_tokens": 420,
+      "response_time": 7.178969144821167,
+      "time_to_first_token": 0.569343090057373,
+      "problem_id": "HumanEval/153"
+    },
+    {
+      "input_tokens": 138,
+      "output_tokens": 421,
+      "response_time": 8.048259973526001,
+      "time_to_first_token": 0.8088970184326172,
+      "problem_id": "HumanEval/154"
+    },
+    {
+      "input_tokens": 74,
+      "output_tokens": 405,
+      "response_time": 7.048304080963135,
+      "time_to_first_token": 0.45497918128967285,
+      "problem_id": "HumanEval/155"
+    },
+    {
+      "input_tokens": 110,
+      "output_tokens": 522,
+      "response_time": 8.254446029663086,
+      "time_to_first_token": 0.3828318119049072,
+      "problem_id": "HumanEval/156"
+    },
+    {
+      "input_tokens": 117,
+      "output_tokens": 369,
+      "response_time": 7.4997382164001465,
+      "time_to_first_token": 0.5498030185699463,
+      "problem_id": "HumanEval/157"
+    },
+    {
+      "input_tokens": 129,
+      "output_tokens": 424,
+      "response_time": 12.917264938354492,
+      "time_to_first_token": 0.43746209144592285,
+      "problem_id": "HumanEval/158"
+    },
+    {
+      "input_tokens": 286,
+      "output_tokens": 442,
+      "response_time": 13.519550323486328,
+      "time_to_first_token": 0.4397003650665283,
+      "problem_id": "HumanEval/159"
+    },
+    {
+      "input_tokens": 216,
+      "output_tokens": 652,
+      "response_time": 12.200005054473877,
+      "time_to_first_token": 0.35517120361328125,
+      "problem_id": "HumanEval/160"
+    },
+    {
+      "input_tokens": 116,
+      "output_tokens": 383,
+      "response_time": 7.391497373580933,
+      "time_to_first_token": 0.3620641231536865,
+      "problem_id": "HumanEval/161"
+    },
+    {
+      "input_tokens": 85,
+      "output_tokens": 351,
+      "response_time": 6.220115900039673,
+      "time_to_first_token": 0.48224782943725586,
+      "problem_id": "HumanEval/162"
+    },
+    {
+      "input_tokens": 113,
+      "output_tokens": 357,
+      "response_time": 15.043270826339722,
+      "time_to_first_token": 0.5760297775268555,
+      "problem_id": "HumanEval/163"
+    }
+  ],
+  "average_metrics": {
+    "avg_input_tokens": 145.3231707317073,
+    "avg_output_tokens": 438.7012195121951,
+    "avg_response_time": 8.774546608692262,
+    "avg_time_to_first_token": 0.5281727066854152
+  },
+  "token_response_time_pairs": [
+    {
+      "input_tokens": 132,
+      "response_time": 6.408639907836914,
+      "problem_id": "HumanEval/0"
+    },
+    {
+      "input_tokens": 123,
+      "response_time": 6.460422039031982,
+      "problem_id": "HumanEval/1"
+    },
+    {
+      "input_tokens": 94,
+      "response_time": 6.048826217651367,
+      "problem_id": "HumanEval/2"
+    },
+    {
+      "input_tokens": 127,
+      "response_time": 4.387210130691528,
+      "problem_id": "HumanEval/3"
+    },
+    {
+      "input_tokens": 125,
+      "response_time": 6.161102056503296,
+      "problem_id": "HumanEval/4"
+    },
+    {
+      "input_tokens": 100,
+      "response_time": 6.265549898147583,
+      "problem_id": "HumanEval/5"
+    },
+    {
+      "input_tokens": 120,
+      "response_time": 6.018758296966553,
+      "problem_id": "HumanEval/6"
+    },
+    {
+      "input_tokens": 101,
+      "response_time": 14.923032999038696,
+      "problem_id": "HumanEval/7"
+    },
+    {
+      "input_tokens": 118,
+      "response_time": 5.289635896682739,
+      "problem_id": "HumanEval/8"
+    },
+    {
+      "input_tokens": 108,
+      "response_time": 6.295656204223633,
+      "problem_id": "HumanEval/9"
+    },
+    {
+      "input_tokens": 151,
+      "response_time": 8.484961032867432,
+      "problem_id": "HumanEval/10"
+    },
+    {
+      "input_tokens": 84,
+      "response_time": 5.703063011169434,
+      "problem_id": "HumanEval/11"
+    },
+    {
+      "input_tokens": 110,
+      "response_time": 4.915116786956787,
+      "problem_id": "HumanEval/12"
+    },
+    {
+      "input_tokens": 79,
+      "response_time": 5.589785099029541,
+      "problem_id": "HumanEval/13"
+    },
+    {
+      "input_tokens": 67,
+      "response_time": 4.224295139312744,
+      "problem_id": "HumanEval/14"
+    },
+    {
+      "input_tokens": 77,
+      "response_time": 3.781337022781372,
+      "problem_id": "HumanEval/15"
+    },
+    {
+      "input_tokens": 79,
+      "response_time": 4.313772201538086,
+      "problem_id": "HumanEval/16"
+    },
+    {
+      "input_tokens": 180,
+      "response_time": 7.025284051895142,
+      "problem_id": "HumanEval/17"
+    },
+    {
+      "input_tokens": 97,
+      "response_time": 7.609920024871826,
+      "problem_id": "HumanEval/18"
+    },
+    {
+      "input_tokens": 113,
+      "response_time": 13.332211017608643,
+      "problem_id": "HumanEval/19"
+    },
+    {
+      "input_tokens": 174,
+      "response_time": 16.198643922805786,
+      "problem_id": "HumanEval/20"
+    },
+    {
+      "input_tokens": 131,
+      "response_time": 7.321782112121582,
+      "problem_id": "HumanEval/21"
+    },
+    {
+      "input_tokens": 99,
+      "response_time": 5.143683910369873,
+      "problem_id": "HumanEval/22"
+    },
+    {
+      "input_tokens": 52,
+      "response_time": 2.74759578704834,
+      "problem_id": "HumanEval/23"
+    },
+    {
+      "input_tokens": 61,
+      "response_time": 6.652837753295898,
+      "problem_id": "HumanEval/24"
+    },
+    {
+      "input_tokens": 134,
+      "response_time": 10.826468229293823,
+      "problem_id": "HumanEval/25"
+    },
+    {
+      "input_tokens": 92,
+      "response_time": 6.186002969741821,
+      "problem_id": "HumanEval/26"
+    },
+    {
+      "input_tokens": 57,
+      "response_time": 9.41047191619873,
+      "problem_id": "HumanEval/27"
+    },
+    {
+      "input_tokens": 65,
+      "response_time": 4.683902025222778,
+      "problem_id": "HumanEval/28"
+    },
+    {
+      "input_tokens": 95,
+      "response_time": 4.2761390209198,
+      "problem_id": "HumanEval/29"
+    },
+    {
+      "input_tokens": 122,
+      "response_time": 4.696648836135864,
+      "problem_id": "HumanEval/30"
+    },
+    {
+      "input_tokens": 108,
+      "response_time": 8.053368091583252,
+      "problem_id": "HumanEval/31"
+    },
+    {
+      "input_tokens": 267,
+      "response_time": 15.480569839477539,
+      "problem_id": "HumanEval/32"
+    },
+    {
+      "input_tokens": 159,
+      "response_time": 9.842303276062012,
+      "problem_id": "HumanEval/33"
+    },
+    {
+      "input_tokens": 82,
+      "response_time": 5.38952112197876,
+      "problem_id": "HumanEval/34"
+    },
+    {
+      "input_tokens": 91,
+      "response_time": 6.693501234054565,
+      "problem_id": "HumanEval/35"
+    },
+    {
+      "input_tokens": 88,
+      "response_time": 7.632482051849365,
+      "problem_id": "HumanEval/36"
+    },
+    {
+      "input_tokens": 132,
+      "response_time": 11.21195387840271,
+      "problem_id": "HumanEval/37"
+    },
+    {
+      "input_tokens": 167,
+      "response_time": 7.568634748458862,
+      "problem_id": "HumanEval/38"
+    },
+    {
+      "input_tokens": 106,
+      "response_time": 9.316965103149414,
+      "problem_id": "HumanEval/39"
+    },
+    {
+      "input_tokens": 168,
+      "response_time": 9.774581670761108,
+      "problem_id": "HumanEval/40"
+    },
+    {
+      "input_tokens": 160,
+      "response_time": 5.016481876373291,
+      "problem_id": "HumanEval/41"
+    },
+    {
+      "input_tokens": 117,
+      "response_time": 5.297466039657593,
+      "problem_id": "HumanEval/42"
+    },
+    {
+      "input_tokens": 166,
+      "response_time": 8.698102712631226,
+      "problem_id": "HumanEval/43"
+    },
+    {
+      "input_tokens": 100,
+      "response_time": 7.3487701416015625,
+      "problem_id": "HumanEval/44"
+    },
+    {
+      "input_tokens": 55,
+      "response_time": 7.437741041183472,
+      "problem_id": "HumanEval/45"
+    },
+    {
+      "input_tokens": 180,
+      "response_time": 7.942539930343628,
+      "problem_id": "HumanEval/46"
+    },
+    {
+      "input_tokens": 84,
+      "response_time": 15.628339290618896,
+      "problem_id": "HumanEval/47"
+    },
+    {
+      "input_tokens": 80,
+      "response_time": 5.114252090454102,
+      "problem_id": "HumanEval/48"
+    },
+    {
+      "input_tokens": 114,
+      "response_time": 11.166544914245605,
+      "problem_id": "HumanEval/49"
+    },
+    {
+      "input_tokens": 99,
+      "response_time": 11.220181941986084,
+      "problem_id": "HumanEval/50"
+    },
+    {
+      "input_tokens": 131,
+      "response_time": 4.7580790519714355,
+      "problem_id": "HumanEval/51"
+    },
+    {
+      "input_tokens": 88,
+      "response_time": 10.050950765609741,
+      "problem_id": "HumanEval/52"
+    },
+    {
+      "input_tokens": 62,
+      "response_time": 4.395657062530518,
+      "problem_id": "HumanEval/53"
+    },
+    {
+      "input_tokens": 149,
+      "response_time": 7.554427146911621,
+      "problem_id": "HumanEval/54"
+    },
+    {
+      "input_tokens": 61,
+      "response_time": 7.190587997436523,
+      "problem_id": "HumanEval/55"
+    },
+    {
+      "input_tokens": 101,
+      "response_time": 10.263796091079712,
+      "problem_id": "HumanEval/56"
+    },
+    {
+      "input_tokens": 96,
+      "response_time": 6.69527792930603,
+      "problem_id": "HumanEval/57"
+    },
+    {
+      "input_tokens": 123,
+      "response_time": 7.3034586906433105,
+      "problem_id": "HumanEval/58"
+    },
+    {
+      "input_tokens": 72,
+      "response_time": 10.564024209976196,
+      "problem_id": "HumanEval/59"
+    },
+    {
+      "input_tokens": 103,
+      "response_time": 4.177515029907227,
+      "problem_id": "HumanEval/60"
+    },
+    {
+      "input_tokens": 98,
+      "response_time": 6.343921184539795,
+      "problem_id": "HumanEval/61"
+    },
+    {
+      "input_tokens": 117,
+      "response_time": 7.670650243759155,
+      "problem_id": "HumanEval/62"
+    },
+    {
+      "input_tokens": 158,
+      "response_time": 6.094933986663818,
+      "problem_id": "HumanEval/63"
+    },
+    {
+      "input_tokens": 135,
+      "response_time": 10.90599513053894,
+      "problem_id": "HumanEval/64"
+    },
+    {
+      "input_tokens": 91,
+      "response_time": 9.500552892684937,
+      "problem_id": "HumanEval/65"
+    },
+    {
+      "input_tokens": 121,
+      "response_time": 4.4558961391448975,
+      "problem_id": "HumanEval/66"
+    },
+    {
+      "input_tokens": 219,
+      "response_time": 5.488193035125732,
+      "problem_id": "HumanEval/67"
+    },
+    {
+      "input_tokens": 321,
+      "response_time": 9.583686113357544,
+      "problem_id": "HumanEval/68"
+    },
+    {
+      "input_tokens": 174,
+      "response_time": 5.252902984619141,
+      "problem_id": "HumanEval/69"
+    },
+    {
+      "input_tokens": 133,
+      "response_time": 8.438261985778809,
+      "problem_id": "HumanEval/70"
+    },
+    {
+      "input_tokens": 130,
+      "response_time": 8.445791959762573,
+      "problem_id": "HumanEval/71"
+    },
+    {
+      "input_tokens": 239,
+      "response_time": 7.751943826675415,
+      "problem_id": "HumanEval/72"
+    },
+    {
+      "input_tokens": 166,
+      "response_time": 8.64597773551941,
+      "problem_id": "HumanEval/73"
+    },
+    {
+      "input_tokens": 202,
+      "response_time": 8.700152158737183,
+      "problem_id": "HumanEval/74"
+    },
+    {
+      "input_tokens": 88,
+      "response_time": 7.192456245422363,
+      "problem_id": "HumanEval/75"
+    },
+    {
+      "input_tokens": 151,
+      "response_time": 8.302793025970459,
+      "problem_id": "HumanEval/76"
+    },
+    {
+      "input_tokens": 119,
+      "response_time": 8.28183913230896,
+      "problem_id": "HumanEval/77"
+    },
+    {
+      "input_tokens": 308,
+      "response_time": 6.541334867477417,
+      "problem_id": "HumanEval/78"
+    },
+    {
+      "input_tokens": 148,
+      "response_time": 7.090100049972534,
+      "problem_id": "HumanEval/79"
+    },
+    {
+      "input_tokens": 130,
+      "response_time": 8.598396062850952,
+      "problem_id": "HumanEval/80"
+    },
+    {
+      "input_tokens": 279,
+      "response_time": 9.261376142501831,
+      "problem_id": "HumanEval/81"
+    },
+    {
+      "input_tokens": 90,
+      "response_time": 8.168236017227173,
+      "problem_id": "HumanEval/82"
+    },
+    {
+      "input_tokens": 53,
+      "response_time": 14.604327917098999,
+      "problem_id": "HumanEval/83"
+    },
+    {
+      "input_tokens": 142,
+      "response_time": 8.047394037246704,
+      "problem_id": "HumanEval/84"
+    },
+    {
+      "input_tokens": 64,
+      "response_time": 5.4597320556640625,
+      "problem_id": "HumanEval/85"
+    },
+    {
+      "input_tokens": 139,
+      "response_time": 11.10747766494751,
+      "problem_id": "HumanEval/86"
+    },
+    {
+      "input_tokens": 268,
+      "response_time": 7.51229190826416,
+      "problem_id": "HumanEval/87"
+    },
+    {
+      "input_tokens": 212,
+      "response_time": 12.235410213470459,
+      "problem_id": "HumanEval/88"
+    },
+    {
+      "input_tokens": 119,
+      "response_time": 7.3120551109313965,
+      "problem_id": "HumanEval/89"
+    },
+    {
+      "input_tokens": 133,
+      "response_time": 8.547930002212524,
+      "problem_id": "HumanEval/90"
+    },
+    {
+      "input_tokens": 116,
+      "response_time": 8.256440162658691,
+      "problem_id": "HumanEval/91"
+    },
+    {
+      "input_tokens": 144,
+      "response_time": 6.949277877807617,
+      "problem_id": "HumanEval/92"
+    },
+    {
+      "input_tokens": 118,
+      "response_time": 6.0346949100494385,
+      "problem_id": "HumanEval/93"
+    },
+    {
+      "input_tokens": 295,
+      "response_time": 9.93135380744934,
+      "problem_id": "HumanEval/94"
+    },
+    {
+      "input_tokens": 178,
+      "response_time": 7.2528369426727295,
+      "problem_id": "HumanEval/95"
+    },
+    {
+      "input_tokens": 154,
+      "response_time": 7.606952905654907,
+      "problem_id": "HumanEval/96"
+    },
+    {
+      "input_tokens": 107,
+      "response_time": 13.50206708908081,
+      "problem_id": "HumanEval/97"
+    },
+    {
+      "input_tokens": 81,
+      "response_time": 4.393060207366943,
+      "problem_id": "HumanEval/98"
+    },
+    {
+      "input_tokens": 165,
+      "response_time": 6.272460222244263,
+      "problem_id": "HumanEval/99"
+    },
+    {
+      "input_tokens": 141,
+      "response_time": 9.321876049041748,
+      "problem_id": "HumanEval/100"
+    },
+    {
+      "input_tokens": 125,
+      "response_time": 9.873142957687378,
+      "problem_id": "HumanEval/101"
+    },
+    {
+      "input_tokens": 103,
+      "response_time": 7.513340950012207,
+      "problem_id": "HumanEval/102"
+    },
+    {
+      "input_tokens": 149,
+      "response_time": 8.852552890777588,
+      "problem_id": "HumanEval/103"
+    },
+    {
+      "input_tokens": 111,
+      "response_time": 9.920767068862915,
+      "problem_id": "HumanEval/104"
+    },
+    {
+      "input_tokens": 285,
+      "response_time": 13.76591682434082,
+      "problem_id": "HumanEval/105"
+    },
+    {
+      "input_tokens": 133,
+      "response_time": 12.63480806350708,
+      "problem_id": "HumanEval/106"
+    },
+    {
+      "input_tokens": 220,
+      "response_time": 6.757436990737915,
+      "problem_id": "HumanEval/107"
+    },
+    {
+      "input_tokens": 133,
+      "response_time": 9.364351987838745,
+      "problem_id": "HumanEval/108"
+    },
+    {
+      "input_tokens": 308,
+      "response_time": 8.676153182983398,
+      "problem_id": "HumanEval/109"
+    },
+    {
+      "input_tokens": 206,
+      "response_time": 10.440423965454102,
+      "problem_id": "HumanEval/110"
+    },
+    {
+      "input_tokens": 160,
+      "response_time": 9.183872938156128,
+      "problem_id": "HumanEval/111"
+    },
+    {
+      "input_tokens": 171,
+      "response_time": 4.95786190032959,
+      "problem_id": "HumanEval/112"
+    },
+    {
+      "input_tokens": 182,
+      "response_time": 11.132673740386963,
+      "problem_id": "HumanEval/113"
+    },
+    {
+      "input_tokens": 97,
+      "response_time": 12.663919925689697,
+      "problem_id": "HumanEval/114"
+    },
+    {
+      "input_tokens": 332,
+      "response_time": 10.373762130737305,
+      "problem_id": "HumanEval/115"
+    },
+    {
+      "input_tokens": 179,
+      "response_time": 6.8565919399261475,
+      "problem_id": "HumanEval/116"
+    },
+    {
+      "input_tokens": 190,
+      "response_time": 8.141731977462769,
+      "problem_id": "HumanEval/117"
+    },
+    {
+      "input_tokens": 158,
+      "response_time": 10.399149179458618,
+      "problem_id": "HumanEval/118"
+    },
+    {
+      "input_tokens": 177,
+      "response_time": 11.791356086730957,
+      "problem_id": "HumanEval/119"
+    },
+    {
+      "input_tokens": 226,
+      "response_time": 6.695756196975708,
+      "problem_id": "HumanEval/120"
+    },
+    {
+      "input_tokens": 106,
+      "response_time": 8.863792181015015,
+      "problem_id": "HumanEval/121"
+    },
+    {
+      "input_tokens": 137,
+      "response_time": 9.296727895736694,
+      "problem_id": "HumanEval/122"
+    },
+    {
+      "input_tokens": 240,
+      "response_time": 14.065585851669312,
+      "problem_id": "HumanEval/123"
+    },
+    {
+      "input_tokens": 272,
+      "response_time": 46.71295499801636,
+      "problem_id": "HumanEval/124"
+    },
+    {
+      "input_tokens": 149,
+      "response_time": 6.458328008651733,
+      "problem_id": "HumanEval/125"
+    },
+    {
+      "input_tokens": 258,
+      "response_time": 10.56355094909668,
+      "problem_id": "HumanEval/126"
+    },
+    {
+      "input_tokens": 263,
+      "response_time": 14.753566980361938,
+      "problem_id": "HumanEval/127"
+    },
+    {
+      "input_tokens": 131,
+      "response_time": 16.504725217819214,
+      "problem_id": "HumanEval/128"
+    },
+    {
+      "input_tokens": 405,
+      "response_time": 11.112507104873657,
+      "problem_id": "HumanEval/129"
+    },
+    {
+      "input_tokens": 244,
+      "response_time": 14.295993089675903,
+      "problem_id": "HumanEval/130"
+    },
+    {
+      "input_tokens": 80,
+      "response_time": 5.8191118240356445,
+      "problem_id": "HumanEval/131"
+    },
+    {
+      "input_tokens": 142,
+      "response_time": 7.6719560623168945,
+      "problem_id": "HumanEval/132"
+    },
+    {
+      "input_tokens": 166,
+      "response_time": 12.464641094207764,
+      "problem_id": "HumanEval/133"
+    },
+    {
+      "input_tokens": 146,
+      "response_time": 23.80996298789978,
+      "problem_id": "HumanEval/134"
+    },
+    {
+      "input_tokens": 112,
+      "response_time": 10.835237264633179,
+      "problem_id": "HumanEval/135"
+    },
+    {
+      "input_tokens": 147,
+      "response_time": 6.1944739818573,
+      "problem_id": "HumanEval/136"
+    },
+    {
+      "input_tokens": 150,
+      "response_time": 10.172945976257324,
+      "problem_id": "HumanEval/137"
+    },
+    {
+      "input_tokens": 86,
+      "response_time": 7.494703054428101,
+      "problem_id": "HumanEval/138"
+    },
+    {
+      "input_tokens": 104,
+      "response_time": 9.335049867630005,
+      "problem_id": "HumanEval/139"
+    },
+    {
+      "input_tokens": 115,
+      "response_time": 10.17556881904602,
+      "problem_id": "HumanEval/140"
+    },
+    {
+      "input_tokens": 223,
+      "response_time": 9.986987113952637,
+      "problem_id": "HumanEval/141"
+    },
+    {
+      "input_tokens": 178,
+      "response_time": 12.218848943710327,
+      "problem_id": "HumanEval/142"
+    },
+    {
+      "input_tokens": 156,
+      "response_time": 6.805418014526367,
+      "problem_id": "HumanEval/143"
+    },
+    {
+      "input_tokens": 164,
+      "response_time": 8.454299926757812,
+      "problem_id": "HumanEval/144"
+    },
+    {
+      "input_tokens": 124,
+      "response_time": 7.344842195510864,
+      "problem_id": "HumanEval/145"
+    },
+    {
+      "input_tokens": 128,
+      "response_time": 6.354258298873901,
+      "problem_id": "HumanEval/146"
+    },
+    {
+      "input_tokens": 174,
+      "response_time": 8.123557090759277,
+      "problem_id": "HumanEval/147"
+    },
+    {
+      "input_tokens": 220,
+      "response_time": 8.932281017303467,
+      "problem_id": "HumanEval/148"
+    },
+    {
+      "input_tokens": 196,
+      "response_time": 6.397118091583252,
+      "problem_id": "HumanEval/149"
+    },
+    {
+      "input_tokens": 95,
+      "response_time": 5.417688846588135,
+      "problem_id": "HumanEval/150"
+    },
+    {
+      "input_tokens": 146,
+      "response_time": 16.15858006477356,
+      "problem_id": "HumanEval/151"
+    },
+    {
+      "input_tokens": 239,
+      "response_time": 5.679527759552002,
+      "problem_id": "HumanEval/152"
+    },
+    {
+      "input_tokens": 286,
+      "response_time": 7.178969144821167,
+      "problem_id": "HumanEval/153"
+    },
+    {
+      "input_tokens": 138,
+      "response_time": 8.048259973526001,
+      "problem_id": "HumanEval/154"
+    },
+    {
+      "input_tokens": 74,
+      "response_time": 7.048304080963135,
+      "problem_id": "HumanEval/155"
+    },
+    {
+      "input_tokens": 110,
+      "response_time": 8.254446029663086,
+      "problem_id": "HumanEval/156"
+    },
+    {
+      "input_tokens": 117,
+      "response_time": 7.4997382164001465,
+      "problem_id": "HumanEval/157"
+    },
+    {
+      "input_tokens": 129,
+      "response_time": 12.917264938354492,
+      "problem_id": "HumanEval/158"
+    },
+    {
+      "input_tokens": 286,
+      "response_time": 13.519550323486328,
+      "problem_id": "HumanEval/159"
+    },
+    {
+      "input_tokens": 216,
+      "response_time": 12.200005054473877,
+      "problem_id": "HumanEval/160"
+    },
+    {
+      "input_tokens": 116,
+      "response_time": 7.391497373580933,
+      "problem_id": "HumanEval/161"
+    },
+    {
+      "input_tokens": 85,
+      "response_time": 6.220115900039673,
+      "problem_id": "HumanEval/162"
+    },
+    {
+      "input_tokens": 113,
+      "response_time": 15.043270826339722,
+      "problem_id": "HumanEval/163"
+    }
+  ],
+  "token_ttft_pairs": [
+    {
+      "input_tokens": 132,
+      "time_to_first_token": 0.8452060222625732,
+      "problem_id": "HumanEval/0"
+    },
+    {
+      "input_tokens": 123,
+      "time_to_first_token": 0.7129001617431641,
+      "problem_id": "HumanEval/1"
+    },
+    {
+      "input_tokens": 94,
+      "time_to_first_token": 0.36610889434814453,
+      "problem_id": "HumanEval/2"
+    },
+    {
+      "input_tokens": 127,
+      "time_to_first_token": 0.4099411964416504,
+      "problem_id": "HumanEval/3"
+    },
+    {
+      "input_tokens": 125,
+      "time_to_first_token": 0.5435640811920166,
+      "problem_id": "HumanEval/4"
+    },
+    {
+      "input_tokens": 100,
+      "time_to_first_token": 0.7830648422241211,
+      "problem_id": "HumanEval/5"
+    },
+    {
+      "input_tokens": 120,
+      "time_to_first_token": 0.4529731273651123,
+      "problem_id": "HumanEval/6"
+    },
+    {
+      "input_tokens": 101,
+      "time_to_first_token": 0.688713788986206,
+      "problem_id": "HumanEval/7"
+    },
+    {
+      "input_tokens": 118,
+      "time_to_first_token": 0.429063081741333,
+      "problem_id": "HumanEval/8"
+    },
+    {
+      "input_tokens": 108,
+      "time_to_first_token": 0.5527291297912598,
+      "problem_id": "HumanEval/9"
+    },
+    {
+      "input_tokens": 151,
+      "time_to_first_token": 0.3541998863220215,
+      "problem_id": "HumanEval/10"
+    },
+    {
+      "input_tokens": 84,
+      "time_to_first_token": 0.3837587833404541,
+      "problem_id": "HumanEval/11"
+    },
+    {
+      "input_tokens": 110,
+      "time_to_first_token": 0.4559488296508789,
+      "problem_id": "HumanEval/12"
+    },
+    {
+      "input_tokens": 79,
+      "time_to_first_token": 0.35111308097839355,
+      "problem_id": "HumanEval/13"
+    },
+    {
+      "input_tokens": 67,
+      "time_to_first_token": 0.40922093391418457,
+      "problem_id": "HumanEval/14"
+    },
+    {
+      "input_tokens": 77,
+      "time_to_first_token": 0.4061598777770996,
+      "problem_id": "HumanEval/15"
+    },
+    {
+      "input_tokens": 79,
+      "time_to_first_token": 0.42662882804870605,
+      "problem_id": "HumanEval/16"
+    },
+    {
+      "input_tokens": 180,
+      "time_to_first_token": 0.43762803077697754,
+      "problem_id": "HumanEval/17"
+    },
+    {
+      "input_tokens": 97,
+      "time_to_first_token": 0.38827991485595703,
+      "problem_id": "HumanEval/18"
+    },
+    {
+      "input_tokens": 113,
+      "time_to_first_token": 6.447324991226196,
+      "problem_id": "HumanEval/19"
+    },
+    {
+      "input_tokens": 174,
+      "time_to_first_token": 0.6389539241790771,
+      "problem_id": "HumanEval/20"
+    },
+    {
+      "input_tokens": 131,
+      "time_to_first_token": 0.3663370609283447,
+      "problem_id": "HumanEval/21"
+    },
+    {
+      "input_tokens": 99,
+      "time_to_first_token": 0.37126779556274414,
+      "problem_id": "HumanEval/22"
+    },
+    {
+      "input_tokens": 52,
+      "time_to_first_token": 0.3006777763366699,
+      "problem_id": "HumanEval/23"
+    },
+    {
+      "input_tokens": 61,
+      "time_to_first_token": 0.36024975776672363,
+      "problem_id": "HumanEval/24"
+    },
+    {
+      "input_tokens": 134,
+      "time_to_first_token": 0.4680750370025635,
+      "problem_id": "HumanEval/25"
+    },
+    {
+      "input_tokens": 92,
+      "time_to_first_token": 0.33741092681884766,
+      "problem_id": "HumanEval/26"
+    },
+    {
+      "input_tokens": 57,
+      "time_to_first_token": 0.39188098907470703,
+      "problem_id": "HumanEval/27"
+    },
+    {
+      "input_tokens": 65,
+      "time_to_first_token": 0.43930602073669434,
+      "problem_id": "HumanEval/28"
+    },
+    {
+      "input_tokens": 95,
+      "time_to_first_token": 0.357666015625,
+      "problem_id": "HumanEval/29"
+    },
+    {
+      "input_tokens": 122,
+      "time_to_first_token": 0.5447590351104736,
+      "problem_id": "HumanEval/30"
+    },
+    {
+      "input_tokens": 108,
+      "time_to_first_token": 0.3310708999633789,
+      "problem_id": "HumanEval/31"
+    },
+    {
+      "input_tokens": 267,
+      "time_to_first_token": 0.5040130615234375,
+      "problem_id": "HumanEval/32"
+    },
+    {
+      "input_tokens": 159,
+      "time_to_first_token": 0.306408166885376,
+      "problem_id": "HumanEval/33"
+    },
+    {
+      "input_tokens": 82,
+      "time_to_first_token": 0.4225039482116699,
+      "problem_id": "HumanEval/34"
+    },
+    {
+      "input_tokens": 91,
+      "time_to_first_token": 0.3812422752380371,
+      "problem_id": "HumanEval/35"
+    },
+    {
+      "input_tokens": 88,
+      "time_to_first_token": 0.872441291809082,
+      "problem_id": "HumanEval/36"
+    },
+    {
+      "input_tokens": 132,
+      "time_to_first_token": 0.4282848834991455,
+      "problem_id": "HumanEval/37"
+    },
+    {
+      "input_tokens": 167,
+      "time_to_first_token": 0.5163319110870361,
+      "problem_id": "HumanEval/38"
+    },
+    {
+      "input_tokens": 106,
+      "time_to_first_token": 0.4367680549621582,
+      "problem_id": "HumanEval/39"
+    },
+    {
+      "input_tokens": 168,
+      "time_to_first_token": 0.4407217502593994,
+      "problem_id": "HumanEval/40"
+    },
+    {
+      "input_tokens": 160,
+      "time_to_first_token": 0.42331981658935547,
+      "problem_id": "HumanEval/41"
+    },
+    {
+      "input_tokens": 117,
+      "time_to_first_token": 0.7459421157836914,
+      "problem_id": "HumanEval/42"
+    },
+    {
+      "input_tokens": 166,
+      "time_to_first_token": 0.38445591926574707,
+      "problem_id": "HumanEval/43"
+    },
+    {
+      "input_tokens": 100,
+      "time_to_first_token": 0.4057319164276123,
+      "problem_id": "HumanEval/44"
+    },
+    {
+      "input_tokens": 55,
+      "time_to_first_token": 0.711414098739624,
+      "problem_id": "HumanEval/45"
+    },
+    {
+      "input_tokens": 180,
+      "time_to_first_token": 1.2198610305786133,
+      "problem_id": "HumanEval/46"
+    },
+    {
+      "input_tokens": 84,
+      "time_to_first_token": 2.00168514251709,
+      "problem_id": "HumanEval/47"
+    },
+    {
+      "input_tokens": 80,
+      "time_to_first_token": 0.412229061126709,
+      "problem_id": "HumanEval/48"
+    },
+    {
+      "input_tokens": 114,
+      "time_to_first_token": 0.4502298831939697,
+      "problem_id": "HumanEval/49"
+    },
+    {
+      "input_tokens": 99,
+      "time_to_first_token": 0.32531094551086426,
+      "problem_id": "HumanEval/50"
+    },
+    {
+      "input_tokens": 131,
+      "time_to_first_token": 0.4201531410217285,
+      "problem_id": "HumanEval/51"
+    },
+    {
+      "input_tokens": 88,
+      "time_to_first_token": 0.5969750881195068,
+      "problem_id": "HumanEval/52"
+    },
+    {
+      "input_tokens": 62,
+      "time_to_first_token": 0.3929789066314697,
+      "problem_id": "HumanEval/53"
+    },
+    {
+      "input_tokens": 149,
+      "time_to_first_token": 0.35505008697509766,
+      "problem_id": "HumanEval/54"
+    },
+    {
+      "input_tokens": 61,
+      "time_to_first_token": 0.46129679679870605,
+      "problem_id": "HumanEval/55"
+    },
+    {
+      "input_tokens": 101,
+      "time_to_first_token": 0.34871983528137207,
+      "problem_id": "HumanEval/56"
+    },
+    {
+      "input_tokens": 96,
+      "time_to_first_token": 0.3459610939025879,
+      "problem_id": "HumanEval/57"
+    },
+    {
+      "input_tokens": 123,
+      "time_to_first_token": 0.6644108295440674,
+      "problem_id": "HumanEval/58"
+    },
+    {
+      "input_tokens": 72,
+      "time_to_first_token": 0.39675021171569824,
+      "problem_id": "HumanEval/59"
+    },
+    {
+      "input_tokens": 103,
+      "time_to_first_token": 0.5308449268341064,
+      "problem_id": "HumanEval/60"
+    },
+    {
+      "input_tokens": 98,
+      "time_to_first_token": 0.35370802879333496,
+      "problem_id": "HumanEval/61"
+    },
+    {
+      "input_tokens": 117,
+      "time_to_first_token": 0.40009498596191406,
+      "problem_id": "HumanEval/62"
+    },
+    {
+      "input_tokens": 158,
+      "time_to_first_token": 0.5248599052429199,
+      "problem_id": "HumanEval/63"
+    },
+    {
+      "input_tokens": 135,
+      "time_to_first_token": 0.4017820358276367,
+      "problem_id": "HumanEval/64"
+    },
+    {
+      "input_tokens": 91,
+      "time_to_first_token": 0.6718499660491943,
+      "problem_id": "HumanEval/65"
+    },
+    {
+      "input_tokens": 121,
+      "time_to_first_token": 0.3612821102142334,
+      "problem_id": "HumanEval/66"
+    },
+    {
+      "input_tokens": 219,
+      "time_to_first_token": 0.6531000137329102,
+      "problem_id": "HumanEval/67"
+    },
+    {
+      "input_tokens": 321,
+      "time_to_first_token": 0.4372122287750244,
+      "problem_id": "HumanEval/68"
+    },
+    {
+      "input_tokens": 174,
+      "time_to_first_token": 0.3631000518798828,
+      "problem_id": "HumanEval/69"
+    },
+    {
+      "input_tokens": 133,
+      "time_to_first_token": 0.3193988800048828,
+      "problem_id": "HumanEval/70"
+    },
+    {
+      "input_tokens": 130,
+      "time_to_first_token": 0.4307568073272705,
+      "problem_id": "HumanEval/71"
+    },
+    {
+      "input_tokens": 239,
+      "time_to_first_token": 0.38486790657043457,
+      "problem_id": "HumanEval/72"
+    },
+    {
+      "input_tokens": 166,
+      "time_to_first_token": 0.3795788288116455,
+      "problem_id": "HumanEval/73"
+    },
+    {
+      "input_tokens": 202,
+      "time_to_first_token": 0.42840003967285156,
+      "problem_id": "HumanEval/74"
+    },
+    {
+      "input_tokens": 88,
+      "time_to_first_token": 0.3474862575531006,
+      "problem_id": "HumanEval/75"
+    },
+    {
+      "input_tokens": 151,
+      "time_to_first_token": 0.4389920234680176,
+      "problem_id": "HumanEval/76"
+    },
+    {
+      "input_tokens": 119,
+      "time_to_first_token": 0.539710283279419,
+      "problem_id": "HumanEval/77"
+    },
+    {
+      "input_tokens": 308,
+      "time_to_first_token": 0.39722609519958496,
+      "problem_id": "HumanEval/78"
+    },
+    {
+      "input_tokens": 148,
+      "time_to_first_token": 0.4139420986175537,
+      "problem_id": "HumanEval/79"
+    },
+    {
+      "input_tokens": 130,
+      "time_to_first_token": 0.4052431583404541,
+      "problem_id": "HumanEval/80"
+    },
+    {
+      "input_tokens": 279,
+      "time_to_first_token": 0.35396504402160645,
+      "problem_id": "HumanEval/81"
+    },
+    {
+      "input_tokens": 90,
+      "time_to_first_token": 0.44008302688598633,
+      "problem_id": "HumanEval/82"
+    },
+    {
+      "input_tokens": 53,
+      "time_to_first_token": 0.3253331184387207,
+      "problem_id": "HumanEval/83"
+    },
+    {
+      "input_tokens": 142,
+      "time_to_first_token": 0.5592288970947266,
+      "problem_id": "HumanEval/84"
+    },
+    {
+      "input_tokens": 64,
+      "time_to_first_token": 0.5118081569671631,
+      "problem_id": "HumanEval/85"
+    },
+    {
+      "input_tokens": 139,
+      "time_to_first_token": 0.44548583030700684,
+      "problem_id": "HumanEval/86"
+    },
+    {
+      "input_tokens": 268,
+      "time_to_first_token": 0.35048794746398926,
+      "problem_id": "HumanEval/87"
+    },
+    {
+      "input_tokens": 212,
+      "time_to_first_token": 0.4840669631958008,
+      "problem_id": "HumanEval/88"
+    },
+    {
+      "input_tokens": 119,
+      "time_to_first_token": 0.4622201919555664,
+      "problem_id": "HumanEval/89"
+    },
+    {
+      "input_tokens": 133,
+      "time_to_first_token": 0.3921341896057129,
+      "problem_id": "HumanEval/90"
+    },
+    {
+      "input_tokens": 116,
+      "time_to_first_token": 0.3753173351287842,
+      "problem_id": "HumanEval/91"
+    },
+    {
+      "input_tokens": 144,
+      "time_to_first_token": 0.428175687789917,
+      "problem_id": "HumanEval/92"
+    },
+    {
+      "input_tokens": 118,
+      "time_to_first_token": 0.4582688808441162,
+      "problem_id": "HumanEval/93"
+    },
+    {
+      "input_tokens": 295,
+      "time_to_first_token": 0.423738956451416,
+      "problem_id": "HumanEval/94"
+    },
+    {
+      "input_tokens": 178,
+      "time_to_first_token": 0.35515403747558594,
+      "problem_id": "HumanEval/95"
+    },
+    {
+      "input_tokens": 154,
+      "time_to_first_token": 0.4689667224884033,
+      "problem_id": "HumanEval/96"
+    },
+    {
+      "input_tokens": 107,
+      "time_to_first_token": 0.48280811309814453,
+      "problem_id": "HumanEval/97"
+    },
+    {
+      "input_tokens": 81,
+      "time_to_first_token": 0.33095407485961914,
+      "problem_id": "HumanEval/98"
+    },
+    {
+      "input_tokens": 165,
+      "time_to_first_token": 0.43535614013671875,
+      "problem_id": "HumanEval/99"
+    },
+    {
+      "input_tokens": 141,
+      "time_to_first_token": 0.5332379341125488,
+      "problem_id": "HumanEval/100"
+    },
+    {
+      "input_tokens": 125,
+      "time_to_first_token": 0.4600050449371338,
+      "problem_id": "HumanEval/101"
+    },
+    {
+      "input_tokens": 103,
+      "time_to_first_token": 0.49004101753234863,
+      "problem_id": "HumanEval/102"
+    },
+    {
+      "input_tokens": 149,
+      "time_to_first_token": 0.5756011009216309,
+      "problem_id": "HumanEval/103"
+    },
+    {
+      "input_tokens": 111,
+      "time_to_first_token": 0.41301584243774414,
+      "problem_id": "HumanEval/104"
+    },
+    {
+      "input_tokens": 285,
+      "time_to_first_token": 0.4105851650238037,
+      "problem_id": "HumanEval/105"
+    },
+    {
+      "input_tokens": 133,
+      "time_to_first_token": 0.4062621593475342,
+      "problem_id": "HumanEval/106"
+    },
+    {
+      "input_tokens": 220,
+      "time_to_first_token": 0.44629716873168945,
+      "problem_id": "HumanEval/107"
+    },
+    {
+      "input_tokens": 133,
+      "time_to_first_token": 0.5342299938201904,
+      "problem_id": "HumanEval/108"
+    },
+    {
+      "input_tokens": 308,
+      "time_to_first_token": 1.3760712146759033,
+      "problem_id": "HumanEval/109"
+    },
+    {
+      "input_tokens": 206,
+      "time_to_first_token": 0.45566606521606445,
+      "problem_id": "HumanEval/110"
+    },
+    {
+      "input_tokens": 160,
+      "time_to_first_token": 0.391948938369751,
+      "problem_id": "HumanEval/111"
+    },
+    {
+      "input_tokens": 171,
+      "time_to_first_token": 0.3331630229949951,
+      "problem_id": "HumanEval/112"
+    },
+    {
+      "input_tokens": 182,
+      "time_to_first_token": 0.456744909286499,
+      "problem_id": "HumanEval/113"
+    },
+    {
+      "input_tokens": 97,
+      "time_to_first_token": 0.39093804359436035,
+      "problem_id": "HumanEval/114"
+    },
+    {
+      "input_tokens": 332,
+      "time_to_first_token": 0.47642993927001953,
+      "problem_id": "HumanEval/115"
+    },
+    {
+      "input_tokens": 179,
+      "time_to_first_token": 0.3898959159851074,
+      "problem_id": "HumanEval/116"
+    },
+    {
+      "input_tokens": 190,
+      "time_to_first_token": 0.5823860168457031,
+      "problem_id": "HumanEval/117"
+    },
+    {
+      "input_tokens": 158,
+      "time_to_first_token": 0.40375232696533203,
+      "problem_id": "HumanEval/118"
+    },
+    {
+      "input_tokens": 177,
+      "time_to_first_token": 0.38352203369140625,
+      "problem_id": "HumanEval/119"
+    },
+    {
+      "input_tokens": 226,
+      "time_to_first_token": 0.38387131690979004,
+      "problem_id": "HumanEval/120"
+    },
+    {
+      "input_tokens": 106,
+      "time_to_first_token": 0.3420882225036621,
+      "problem_id": "HumanEval/121"
+    },
+    {
+      "input_tokens": 137,
+      "time_to_first_token": 0.42424511909484863,
+      "problem_id": "HumanEval/122"
+    },
+    {
+      "input_tokens": 240,
+      "time_to_first_token": 0.467818021774292,
+      "problem_id": "HumanEval/123"
+    },
+    {
+      "input_tokens": 272,
+      "time_to_first_token": 1.4538781642913818,
+      "problem_id": "HumanEval/124"
+    },
+    {
+      "input_tokens": 149,
+      "time_to_first_token": 0.4716329574584961,
+      "problem_id": "HumanEval/125"
+    },
+    {
+      "input_tokens": 258,
+      "time_to_first_token": 0.43343162536621094,
+      "problem_id": "HumanEval/126"
+    },
+    {
+      "input_tokens": 263,
+      "time_to_first_token": 0.5357089042663574,
+      "problem_id": "HumanEval/127"
+    },
+    {
+      "input_tokens": 131,
+      "time_to_first_token": 0.5264079570770264,
+      "problem_id": "HumanEval/128"
+    },
+    {
+      "input_tokens": 405,
+      "time_to_first_token": 0.5251011848449707,
+      "problem_id": "HumanEval/129"
+    },
+    {
+      "input_tokens": 244,
+      "time_to_first_token": 0.48798394203186035,
+      "problem_id": "HumanEval/130"
+    },
+    {
+      "input_tokens": 80,
+      "time_to_first_token": 0.682528018951416,
+      "problem_id": "HumanEval/131"
+    },
+    {
+      "input_tokens": 142,
+      "time_to_first_token": 0.37758326530456543,
+      "problem_id": "HumanEval/132"
+    },
+    {
+      "input_tokens": 166,
+      "time_to_first_token": 0.46570539474487305,
+      "problem_id": "HumanEval/133"
+    },
+    {
+      "input_tokens": 146,
+      "time_to_first_token": 0.6850991249084473,
+      "problem_id": "HumanEval/134"
+    },
+    {
+      "input_tokens": 112,
+      "time_to_first_token": 0.4173252582550049,
+      "problem_id": "HumanEval/135"
+    },
+    {
+      "input_tokens": 147,
+      "time_to_first_token": 0.5598316192626953,
+      "problem_id": "HumanEval/136"
+    },
+    {
+      "input_tokens": 150,
+      "time_to_first_token": 0.7210628986358643,
+      "problem_id": "HumanEval/137"
+    },
+    {
+      "input_tokens": 86,
+      "time_to_first_token": 0.3940458297729492,
+      "problem_id": "HumanEval/138"
+    },
+    {
+      "input_tokens": 104,
+      "time_to_first_token": 0.4966588020324707,
+      "problem_id": "HumanEval/139"
+    },
+    {
+      "input_tokens": 115,
+      "time_to_first_token": 0.6794757843017578,
+      "problem_id": "HumanEval/140"
+    },
+    {
+      "input_tokens": 223,
+      "time_to_first_token": 0.5859031677246094,
+      "problem_id": "HumanEval/141"
+    },
+    {
+      "input_tokens": 178,
+      "time_to_first_token": 0.5859470367431641,
+      "problem_id": "HumanEval/142"
+    },
+    {
+      "input_tokens": 156,
+      "time_to_first_token": 0.4196805953979492,
+      "problem_id": "HumanEval/143"
+    },
+    {
+      "input_tokens": 164,
+      "time_to_first_token": 0.4979588985443115,
+      "problem_id": "HumanEval/144"
+    },
+    {
+      "input_tokens": 124,
+      "time_to_first_token": 0.4271233081817627,
+      "problem_id": "HumanEval/145"
+    },
+    {
+      "input_tokens": 128,
+      "time_to_first_token": 0.39984607696533203,
+      "problem_id": "HumanEval/146"
+    },
+    {
+      "input_tokens": 174,
+      "time_to_first_token": 0.4116499423980713,
+      "problem_id": "HumanEval/147"
+    },
+    {
+      "input_tokens": 220,
+      "time_to_first_token": 0.4966440200805664,
+      "problem_id": "HumanEval/148"
+    },
+    {
+      "input_tokens": 196,
+      "time_to_first_token": 0.5920200347900391,
+      "problem_id": "HumanEval/149"
+    },
+    {
+      "input_tokens": 95,
+      "time_to_first_token": 0.3903059959411621,
+      "problem_id": "HumanEval/150"
+    },
+    {
+      "input_tokens": 146,
+      "time_to_first_token": 0.514214277267456,
+      "problem_id": "HumanEval/151"
+    },
+    {
+      "input_tokens": 239,
+      "time_to_first_token": 1.0488598346710205,
+      "problem_id": "HumanEval/152"
+    },
+    {
+      "input_tokens": 286,
+      "time_to_first_token": 0.569343090057373,
+      "problem_id": "HumanEval/153"
+    },
+    {
+      "input_tokens": 138,
+      "time_to_first_token": 0.8088970184326172,
+      "problem_id": "HumanEval/154"
+    },
+    {
+      "input_tokens": 74,
+      "time_to_first_token": 0.45497918128967285,
+      "problem_id": "HumanEval/155"
+    },
+    {
+      "input_tokens": 110,
+      "time_to_first_token": 0.3828318119049072,
+      "problem_id": "HumanEval/156"
+    },
+    {
+      "input_tokens": 117,
+      "time_to_first_token": 0.5498030185699463,
+      "problem_id": "HumanEval/157"
+    },
+    {
+      "input_tokens": 129,
+      "time_to_first_token": 0.43746209144592285,
+      "problem_id": "HumanEval/158"
+    },
+    {
+      "input_tokens": 286,
+      "time_to_first_token": 0.4397003650665283,
+      "problem_id": "HumanEval/159"
+    },
+    {
+      "input_tokens": 216,
+      "time_to_first_token": 0.35517120361328125,
+      "problem_id": "HumanEval/160"
+    },
+    {
+      "input_tokens": 116,
+      "time_to_first_token": 0.3620641231536865,
+      "problem_id": "HumanEval/161"
+    },
+    {
+      "input_tokens": 85,
+      "time_to_first_token": 0.48224782943725586,
+      "problem_id": "HumanEval/162"
+    },
+    {
+      "input_tokens": 113,
+      "time_to_first_token": 0.5760297775268555,
+      "problem_id": "HumanEval/163"
+    }
+  ]
+}

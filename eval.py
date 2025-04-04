@@ -7,213 +7,227 @@ from human_eval.data import write_jsonl, read_problems
 from human_eval.evaluation import evaluate_functional_correctness
 
 
-client = OpenAI(
-    base_url=os.environ.get("OPENAI_API_BASE"),
-    api_key=os.environ.get("OPENAI_API_KEY"),
-)
-
-
-def count_tokens(text, model="gpt-4"):
-    """Count the number of tokens in a text string."""
-    try:
-        # Use a default tokenizer (cl100k_base) for models not directly supported by tiktoken
-        encoding = tiktoken.get_encoding("cl100k_base")
-        return len(encoding.encode(text))
-    except Exception as e:
-        print(f"Warning: {e}")
-        # Fallback to approximate token count (cast to int)
-        return int(len(text.split()) * 1.3)
-
-
-def generate_completions(
-    problem, model="llama-3.1-8b-instant", temperature=0.8, max_tokens=512
-):
-    """Generate code completion using OpenAI API."""
-    prompt = problem["prompt"]
-    system_msg = (
-        "You are an expert Python programmer. Write code to solve the given problem."
-    )
-
-    # Count input tokens
-    total_input_tokens = count_tokens(system_msg + prompt, model)
-
-    metrics = {
-        "input_tokens": total_input_tokens,
-        "output_tokens": 0,  # Initialize output tokens
-        "response_time": 0,
-        "time_to_first_token": 0,
-    }
-
-    try:
-        start_time = time.time()
-
-        # Set stream=True to measure time to first token
-        response = client.chat.completions.create(
-            model=model,
-            messages=[
-                {"role": "system", "content": system_msg},
-                {"role": "user", "content": prompt},
-            ],
-            temperature=temperature,
-            max_completion_tokens=max_tokens,
-            top_p=1,
-            stream=True,
-            stop=None,
+class LLMEvaluator:
+    def __init__(self, model_id, api_key=None, api_base=None, temperature=0.8, max_tokens=512):
+        """
+        Initialize the LLM evaluator with model settings and API configuration.
+        
+        Args:
+            model_id (str): The model identifier to use for evaluation
+            api_key (str, optional): OpenAI API key. Defaults to environment variable.
+            api_base (str, optional): OpenAI API base URL. Defaults to environment variable.
+            temperature (float, optional): Sampling temperature. Defaults to 0.8.
+            max_tokens (int, optional): Maximum tokens to generate. Defaults to 512.
+        """
+        self.model_id = model_id
+        self.temperature = temperature
+        self.max_tokens = max_tokens
+        
+        # Initialize OpenAI client
+        self.client = OpenAI(
+            base_url=api_base,
+            api_key=api_key
         )
+        
+        # Create a model-specific results directory
+        self.model_dir_name = self.model_id.replace("-", "_")
+        self.results_dir = os.path.join("./results", self.model_dir_name)
+        os.makedirs(self.results_dir, exist_ok=True)
 
-        # Initialize variables for streaming
-        completion_content = ""
-        first_token_received = False
+    def count_tokens(self, text):
+        """Count the number of tokens in a text string."""
+        try:
+            # Use a default tokenizer (cl100k_base) for models not directly supported by tiktoken
+            encoding = tiktoken.get_encoding("cl100k_base")
+            return len(encoding.encode(text))
+        except Exception as e:
+            print(f"Warning: {e}")
+            # Fallback to approximate token count (cast to int)
+            return int(len(text.split()) * 1.3)
 
-        # Process the streaming response
-        for chunk in response:
-            if not first_token_received and chunk.choices[0].delta.content:
-                first_token_received = True
-                metrics["time_to_first_token"] = time.time() - start_time
+    def generate_completion(self, problem):
+        """
+        Generate code completion for a single problem using OpenAI API.
+        
+        Args:
+            problem (dict): Problem data containing the prompt
+            
+        Returns:
+            tuple: (completion_text, metrics_dict)
+        """
+        prompt = problem["prompt"]
+        system_msg = "You are an expert Python programmer. Write code to solve the given problem."
 
-            if chunk.choices[0].delta.content:
-                completion_content += chunk.choices[0].delta.content
+        # Count input tokens
+        total_input_tokens = self.count_tokens(system_msg + prompt)
 
-        # Calculate total response time
-        metrics["response_time"] = time.time() - start_time
+        metrics = {
+            "input_tokens": total_input_tokens,
+            "output_tokens": 0,  # Initialize output tokens
+            "response_time": 0,
+            "time_to_first_token": 0,
+        }
 
-        # Count output tokens
-        metrics["output_tokens"] = count_tokens(completion_content, model)
+        try:
+            start_time = time.time()
 
-        # Extract only the code part if it contains markdown code blocks
-        if "```python" in completion_content and "```" in completion_content:
-            code_block = (
-                completion_content.split("```python")[1].split("```")[0].strip()
+            # Set stream=True to measure time to first token
+            response = self.client.chat.completions.create(
+                model=self.model_id,
+                messages=[
+                    {"role": "system", "content": system_msg},
+                    {"role": "user", "content": prompt},
+                ],
+                temperature=self.temperature,
+                max_completion_tokens=self.max_tokens,
+                top_p=1,
+                stream=True,
+                stop=None,
             )
-            return code_block, metrics
 
-        return completion_content, metrics
+            # Initialize variables for streaming
+            completion_content = ""
+            first_token_received = False
 
-    except Exception as e:
-        print(f"Error generating completion for problem: {e}")
-        return "", metrics
+            # Process the streaming response
+            for chunk in response:
+                if not first_token_received and chunk.choices[0].delta.content:
+                    first_token_received = True
+                    metrics["time_to_first_token"] = time.time() - start_time
 
+                if chunk.choices[0].delta.content:
+                    completion_content += chunk.choices[0].delta.content
 
-def evaluate_model(
-    model_name="llama-3.1-8b-instant", temperature=0.8, max_tokens=512, num_samples=None
-):
-    """Evaluate a model on HumanEval dataset."""
-    problems = read_problems()
+            # Calculate total response time
+            metrics["response_time"] = time.time() - start_time
 
-    # For testing, you can limit to fewer problems
-    if num_samples:
-        selected_problems = list(problems.items())[:num_samples]
-    else:
-        selected_problems = list(
-            problems.items()
-        )  # Use all problems if num_samples not specified
+            # Count output tokens
+            metrics["output_tokens"] = self.count_tokens(completion_content)
 
-    # Generate completions
-    completions = []
-    all_metrics = []
+            # Extract only the code part if it contains markdown code blocks
+            if "```python" in completion_content and "```" in completion_content:
+                code_block = completion_content.split("```python")[1].split("```")[0].strip()
+                return code_block, metrics
 
-    # For collecting pairs
-    token_response_time_pairs = []
-    token_ttft_pairs = []
+            return completion_content, metrics
 
-    for problem_id, problem in selected_problems:
-        print(f"Generating completion for {problem_id}...")
-        completion, metrics = generate_completions(
-            problem, model=model_name, temperature=temperature, max_tokens=max_tokens
-        )
+        except Exception as e:
+            print(f"Error generating completion for problem: {e}")
+            return "", metrics
 
-        # Format as expected by the evaluation script
-        completions.append({"task_id": problem_id, "completion": completion})
+    def evaluate(self, num_samples=None):
+        """
+        Evaluate the model on HumanEval dataset.
+        
+        Args:
+            num_samples (int, optional): Number of problems to evaluate. Defaults to None (all problems).
+            
+        Returns:
+            tuple: (evaluation_data, results_directory)
+        """
+        problems = read_problems()
 
-        # Store metrics along with problem ID
-        metrics["problem_id"] = problem_id
-        all_metrics.append(metrics)
+        # For testing, you can limit to fewer problems
+        if num_samples:
+            selected_problems = list(problems.items())[:num_samples]
+        else:
+            selected_problems = list(problems.items())
 
-        # Record the pairs
-        token_response_time_pairs.append(
-            {
+        # Generate completions
+        completions = []
+        all_metrics = []
+
+        # For collecting pairs
+        token_response_time_pairs = []
+        token_ttft_pairs = []
+
+        for problem_id, problem in selected_problems:
+            print(f"Generating completion for {problem_id}...")
+            completion, metrics = self.generate_completion(problem)
+
+            # Format as expected by the evaluation script
+            completions.append({"task_id": problem_id, "completion": completion})
+
+            # Store metrics along with problem ID
+            metrics["problem_id"] = problem_id
+            all_metrics.append(metrics)
+
+            # Record the pairs
+            token_response_time_pairs.append({
                 "input_tokens": metrics["input_tokens"],
                 "response_time": metrics["response_time"],
                 "problem_id": problem_id,
-            }
-        )
+            })
 
-        token_ttft_pairs.append(
-            {
+            token_ttft_pairs.append({
                 "input_tokens": metrics["input_tokens"],
                 "time_to_first_token": metrics["time_to_first_token"],
                 "problem_id": problem_id,
-            }
-        )
+            })
 
-        # Add a small delay to avoid rate limiting
-        time.sleep(1)
+            # Add a small delay to avoid rate limiting
+            time.sleep(1)
 
-    # Create model-specific results directory
-    model_dir_name = model_name.replace("-", "_")
-    results_dir = os.path.join("./results", model_dir_name)
-    os.makedirs(results_dir, exist_ok=True)
+        # Save completions to a file in the model-specific directory
+        output_file = os.path.join(self.results_dir, "completions.jsonl")
+        write_jsonl(output_file, completions)
 
-    # Save completions to a file in the model-specific directory
-    output_file = os.path.join(results_dir, f"completions.jsonl")
-    write_jsonl(output_file, completions)
+        # Evaluate the completions
+        try:
+            results = evaluate_functional_correctness(output_file)
+            print(f"\nResults for {self.model_id}:")
+            print(f"Pass@1: {results['pass@1']:.4f}")
+        except AssertionError as e:
+            print(f"Evaluation error: {e}")
+            print("Note: This error may occur if not all problems were completed.")
+            # Create a basic results structure if evaluation fails
+            results = {"pass@1": 0.0, "evaluation_error": str(e)}
 
-    # Evaluate the completions
-    try:
-        results = evaluate_functional_correctness(output_file)
-        print(f"\nResults for {model_name}:")
-        print(f"Pass@1: {results['pass@1']:.4f}")
-    except AssertionError as e:
-        print(f"Evaluation error: {e}")
-        print("Note: This error may occur if not all problems were completed.")
-        # Create a basic results structure if evaluation fails
-        results = {"pass@1": 0.0, "evaluation_error": str(e)}
+        # Combine results and metrics
+        evaluation_data = {
+            "model": self.model_id,
+            "temperature": self.temperature,
+            "max_tokens": self.max_tokens,
+            "evaluation_results": results,
+            "problem_metrics": all_metrics,
+            "average_metrics": {
+                "avg_input_tokens": sum(m["input_tokens"] for m in all_metrics) / len(all_metrics),
+                "avg_output_tokens": sum(m["output_tokens"] for m in all_metrics) / len(all_metrics),
+                "avg_response_time": sum(m["response_time"] for m in all_metrics) / len(all_metrics),
+                "avg_time_to_first_token": sum(m["time_to_first_token"] for m in all_metrics) / len(all_metrics),
+            },
+            "token_response_time_pairs": token_response_time_pairs,
+            "token_ttft_pairs": token_ttft_pairs,
+        }
 
-    # Combine results and metrics
-    evaluation_data = {
-        "model": model_name,
-        "temperature": temperature,
-        "max_tokens": max_tokens,
-        "evaluation_results": results,
-        "problem_metrics": all_metrics,
-        "average_metrics": {
-            "avg_input_tokens": sum(m["input_tokens"] for m in all_metrics)
-            / len(all_metrics),
-            "avg_output_tokens": sum(m["output_tokens"] for m in all_metrics)
-            / len(all_metrics),
-            "avg_response_time": sum(m["response_time"] for m in all_metrics)
-            / len(all_metrics),
-            "avg_time_to_first_token": sum(
-                m["time_to_first_token"] for m in all_metrics
-            )
-            / len(all_metrics),
-        },
-        # Add the requested pairs
-        "token_response_time_pairs": token_response_time_pairs,
-        "token_ttft_pairs": token_ttft_pairs,
-    }
+        # Save detailed evaluation data
+        self.save_evaluation_data(evaluation_data)
+        
+        return evaluation_data, self.results_dir
 
-    return evaluation_data, results_dir
+    def save_evaluation_data(self, evaluation_data):
+        """Save evaluation data to a JSON file."""
+        evaluation_file = os.path.join(self.results_dir, "evaluation.json")
+        with open(evaluation_file, "w") as f:
+            json.dump(evaluation_data, f, indent=2)
+        print(f"Detailed evaluation data saved to {evaluation_file}")
 
 
 if __name__ == "__main__":
+    # Example usage
     # Make sure you have set the OPENAI_API_KEY environment variable
-    if not os.environ.get("OPENAI_API_KEY"):
-        print("Please set the OPENAI_API_KEY environment variable")
-        exit(1)
-
-    # Evaluate models
-    model_name = "llama-3.3-70b-versatile"  # Default model
-    evaluation_data, results_dir = evaluate_model(
-        model_name=model_name,
+    # if not os.environ.get("OPENAI_API_KEY"):
+    #     print("Please set the OPENAI_API_KEY environment variable")
+    #     exit(1)
+    
+    # Initialize the evaluator with model settings
+    evaluator = LLMEvaluator(
+        model_id="qwen-2.5-32b",  # Model to evaluate
         temperature=1,
         max_tokens=1024,
-        # num_samples=164,  # Adjust this for more or fewer problems
+        api_key="your-api-key",
+        api_base="base",
     )
-
-    # Save detailed evaluation data including metrics to the model-specific directory
-    evaluation_file = os.path.join(results_dir, "evaluation.json")
-    with open(evaluation_file, "w") as f:
-        json.dump(evaluation_data, f, indent=2)
-
-    print(f"Detailed evaluation data saved to {evaluation_file}")
+    
+    # Run evaluation
+    evaluation_data, results_dir = evaluator.evaluate()
