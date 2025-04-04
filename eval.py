@@ -8,10 +8,12 @@ from human_eval.evaluation import evaluate_functional_correctness
 
 
 class LLMEvaluator:
-    def __init__(self, model_id, api_key=None, api_base=None, temperature=0.8, max_tokens=512):
+    def __init__(
+        self, model_id, api_key=None, api_base=None, temperature=0.8, max_tokens=512
+    ):
         """
         Initialize the LLM evaluator with model settings and API configuration.
-        
+
         Args:
             model_id (str): The model identifier to use for evaluation
             api_key (str, optional): OpenAI API key. Defaults to environment variable.
@@ -22,16 +24,24 @@ class LLMEvaluator:
         self.model_id = model_id
         self.temperature = temperature
         self.max_tokens = max_tokens
-        
+
+        if not api_base:
+            self.provider = "openai"
+        elif "groq" in api_base:
+            self.provider = "groq"
+        elif "fireworks" in api_base:
+            self.provider = "fireworks"
+        else:
+            self.provider = "custom"
+
         # Initialize OpenAI client
-        self.client = OpenAI(
-            base_url=api_base,
-            api_key=api_key
-        )
-        
+        self.client = OpenAI(base_url=api_base, api_key=api_key)
+
         # Create a model-specific results directory
         self.model_dir_name = self.model_id.replace("-", "_")
-        self.results_dir = os.path.join("./results", self.model_dir_name)
+        self.results_dir = os.path.join(
+            "./results", f"{self.provider}_{self.model_dir_name}"
+        )
         os.makedirs(self.results_dir, exist_ok=True)
 
     def count_tokens(self, text):
@@ -48,10 +58,10 @@ class LLMEvaluator:
     def generate_completion(self, problem):
         """
         Generate code completion for a single problem using OpenAI API.
-        
+
         Args:
             problem (dict): Problem data containing the prompt
-            
+
         Returns:
             tuple: (completion_text, metrics_dict)
         """
@@ -106,7 +116,9 @@ class LLMEvaluator:
 
             # Extract only the code part if it contains markdown code blocks
             if "```python" in completion_content and "```" in completion_content:
-                code_block = completion_content.split("```python")[1].split("```")[0].strip()
+                code_block = (
+                    completion_content.split("```python")[1].split("```")[0].strip()
+                )
                 return code_block, metrics
 
             return completion_content, metrics
@@ -118,10 +130,10 @@ class LLMEvaluator:
     def evaluate(self, num_samples=None):
         """
         Evaluate the model on HumanEval dataset.
-        
+
         Args:
             num_samples (int, optional): Number of problems to evaluate. Defaults to None (all problems).
-            
+
         Returns:
             tuple: (evaluation_data, results_directory)
         """
@@ -153,17 +165,21 @@ class LLMEvaluator:
             all_metrics.append(metrics)
 
             # Record the pairs
-            token_response_time_pairs.append({
-                "input_tokens": metrics["input_tokens"],
-                "response_time": metrics["response_time"],
-                "problem_id": problem_id,
-            })
+            token_response_time_pairs.append(
+                {
+                    "input_tokens": metrics["input_tokens"],
+                    "response_time": metrics["response_time"],
+                    "problem_id": problem_id,
+                }
+            )
 
-            token_ttft_pairs.append({
-                "input_tokens": metrics["input_tokens"],
-                "time_to_first_token": metrics["time_to_first_token"],
-                "problem_id": problem_id,
-            })
+            token_ttft_pairs.append(
+                {
+                    "input_tokens": metrics["input_tokens"],
+                    "time_to_first_token": metrics["time_to_first_token"],
+                    "problem_id": problem_id,
+                }
+            )
 
             # Add a small delay to avoid rate limiting
             time.sleep(1)
@@ -191,10 +207,16 @@ class LLMEvaluator:
             "evaluation_results": results,
             "problem_metrics": all_metrics,
             "average_metrics": {
-                "avg_input_tokens": sum(m["input_tokens"] for m in all_metrics) / len(all_metrics),
-                "avg_output_tokens": sum(m["output_tokens"] for m in all_metrics) / len(all_metrics),
-                "avg_response_time": sum(m["response_time"] for m in all_metrics) / len(all_metrics),
-                "avg_time_to_first_token": sum(m["time_to_first_token"] for m in all_metrics) / len(all_metrics),
+                "avg_input_tokens": sum(m["input_tokens"] for m in all_metrics)
+                / len(all_metrics),
+                "avg_output_tokens": sum(m["output_tokens"] for m in all_metrics)
+                / len(all_metrics),
+                "avg_response_time": sum(m["response_time"] for m in all_metrics)
+                / len(all_metrics),
+                "avg_time_to_first_token": sum(
+                    m["time_to_first_token"] for m in all_metrics
+                )
+                / len(all_metrics),
             },
             "token_response_time_pairs": token_response_time_pairs,
             "token_ttft_pairs": token_ttft_pairs,
@@ -202,7 +224,7 @@ class LLMEvaluator:
 
         # Save detailed evaluation data
         self.save_evaluation_data(evaluation_data)
-        
+
         return evaluation_data, self.results_dir
 
     def save_evaluation_data(self, evaluation_data):
@@ -219,7 +241,7 @@ if __name__ == "__main__":
     # if not os.environ.get("OPENAI_API_KEY"):
     #     print("Please set the OPENAI_API_KEY environment variable")
     #     exit(1)
-    
+
     # Initialize the evaluator with model settings
     evaluator = LLMEvaluator(
         model_id="qwen-2.5-32b",  # Model to evaluate
@@ -228,6 +250,6 @@ if __name__ == "__main__":
         api_key="your-api-key",
         api_base="base",
     )
-    
+
     # Run evaluation
     evaluation_data, results_dir = evaluator.evaluate()
