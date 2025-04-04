@@ -5,19 +5,36 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.linear_model import LinearRegression
 import pandas as pd
+import gradio as gr
 from glob import glob
+import base64
+from io import BytesIO
+import tempfile
+import shutil
 
 # Set the style for the plots
 plt.style.use('seaborn-v0_8-darkgrid')
 sns.set_context("talk")
 
-def load_evaluation_data():
-    """Load all evaluation.json files from results directory"""
+def get_available_models():
+    """Get all model names from results directory"""
+    results_dir = './results'
+    if not os.path.exists(results_dir):
+        os.makedirs(results_dir, exist_ok=True)
+        return []
+    model_dirs = [d for d in os.listdir(results_dir) if os.path.isdir(os.path.join(results_dir, d))]
+    return model_dirs
+
+def load_evaluation_data(selected_models=None):
+    """Load evaluation.json files from results directory for selected models"""
     results_dir = './results'
     model_results = {}
     
-    # Get all subdirectories in results
-    model_dirs = [d for d in os.listdir(results_dir) if os.path.isdir(os.path.join(results_dir, d))]
+    # If no models are selected, get all available models
+    if selected_models is None or len(selected_models) == 0:
+        model_dirs = get_available_models()
+    else:
+        model_dirs = selected_models
     
     for model_dir in model_dirs:
         eval_path = os.path.join(results_dir, model_dir, 'evaluation.json')
@@ -34,6 +51,17 @@ def plot_model_metrics(model_results):
     avg_times = [data['average_metrics']['avg_response_time'] for data in model_results.values()]
     pass_rates = [data['evaluation_results']['pass@1'] for data in model_results.values()]
     ttft = [data['average_metrics']['avg_time_to_first_token'] for data in model_results.values()]
+    
+    # Create a static directory for storing images
+    static_dir = os.path.join(os.getcwd(), 'static')
+    os.makedirs(static_dir, exist_ok=True)
+    
+    # Clear previous images
+    for file in os.listdir(static_dir):
+        if file.endswith('.png'):
+            os.remove(os.path.join(static_dir, file))
+    
+    image_paths = {}
     
     # Plot 1: Average Response Time
     plt.figure(figsize=(12, 8))
@@ -59,7 +87,9 @@ def plot_model_metrics(model_results):
                 bbox=dict(boxstyle="round,pad=0.3", fc='navy', alpha=0.6))
     
     plt.tight_layout()
-    plt.savefig('./results/avg_response_time_comparison.png')
+    avg_time_path = os.path.join(static_dir, 'avg_response_time_comparison.png')
+    plt.savefig(avg_time_path)
+    image_paths['avg_response_time'] = avg_time_path
     plt.close()
     
     # Plot 2: Pass@1 Rate
@@ -78,7 +108,9 @@ def plot_model_metrics(model_results):
                 ha='center', va='bottom', fontsize=12)
     
     plt.tight_layout()
-    plt.savefig('./results/pass_rate_comparison.png')
+    pass_rate_path = os.path.join(static_dir, 'pass_rate_comparison.png')
+    plt.savefig(pass_rate_path)
+    image_paths['pass_rate'] = pass_rate_path
     plt.close()
     
     # Plot 3: Time to First Token
@@ -97,21 +129,39 @@ def plot_model_metrics(model_results):
                 ha='center', va='bottom', fontsize=12)
     
     plt.tight_layout()
-    plt.savefig('./results/ttft_comparison.png')
+    ttft_path = os.path.join(static_dir, 'ttft_comparison.png')
+    plt.savefig(ttft_path)
+    image_paths['ttft'] = ttft_path
     plt.close()
+    
+    return image_paths
 
 def build_regression_models(model_results):
     """Build regression models for token length vs time metrics"""
     # Prepare data for combined regression plots
     all_models_data = {}
+    image_paths = {}
+    
+    # Create a static directory for storing images
+    static_dir = os.path.join(os.getcwd(), 'static')
+    os.makedirs(static_dir, exist_ok=True)
     
     for model_name, data in model_results.items():
+        if 'problem_metrics' not in data:
+            print(f"Skipping {model_name} due to missing 'problem_metrics' in the data")
+            continue
+            
         problem_metrics = data['problem_metrics']
         
-        # Skip if necessary metrics aren't available
-        if not problem_metrics or not all(key in problem_metrics[0] for key in 
-                                        ['input_tokens', 'output_tokens', 
-                                         'time_to_first_token', 'response_time']):
+        # Skip if no problem metrics or if necessary metrics aren't available
+        if not problem_metrics or len(problem_metrics) == 0:
+            print(f"Skipping {model_name} due to empty problem_metrics")
+            continue
+            
+        # Check if the required keys exist in the first problem metric
+        if not all(key in problem_metrics[0] for key in 
+                  ['input_tokens', 'output_tokens', 
+                   'time_to_first_token', 'response_time']):
             print(f"Skipping {model_name} due to missing metrics in the data")
             continue
         
@@ -173,7 +223,10 @@ def build_regression_models(model_results):
         
         plt.suptitle(f'Regression Models for {model_name}', fontsize=16)
         plt.tight_layout()
-        plt.savefig(f'./results/{model_name}_regression.png')
+        
+        model_regression_path = os.path.join(static_dir, f'{model_name}_regression.png')
+        plt.savefig(model_regression_path)
+        image_paths[f'{model_name}_regression'] = model_regression_path
         plt.close()
     
     # Create combined plots for comparison if we have multiple models
@@ -211,7 +264,10 @@ def build_regression_models(model_results):
         plt.grid(True, linestyle='--', alpha=0.7)
         plt.legend(loc='best')
         plt.tight_layout()
-        plt.savefig('./results/combined_ttft_regression.png')
+        
+        combined_ttft_path = os.path.join(static_dir, 'combined_ttft_regression.png')
+        plt.savefig(combined_ttft_path)
+        image_paths['combined_ttft_regression'] = combined_ttft_path
         plt.close()
         
         # Combined plot 2: Total tokens vs Response time
@@ -244,27 +300,141 @@ def build_regression_models(model_results):
         plt.grid(True, linestyle='--', alpha=0.7)
         plt.legend(loc='best')
         plt.tight_layout()
-        plt.savefig('./results/combined_response_time_regression.png')
+        
+        combined_response_path = os.path.join(static_dir, 'combined_response_time_regression.png')
+        plt.savefig(combined_response_path)
+        image_paths['combined_response_time_regression'] = combined_response_path
         plt.close()
+    
+    return image_paths
 
-def main():
-    # Load all evaluation data
-    model_results = load_evaluation_data()
+def visualize_models(selected_models):
+    """Generate visualizations for selected models and return markdown content with images"""
+    if not selected_models:
+        return "Please select at least one model to visualize."
+    
+    # Load data for selected models
+    model_results = load_evaluation_data(selected_models)
     
     if not model_results:
-        print("No evaluation.json files found in results directory!")
-        return
+        return "No evaluation data found for the selected models."
     
-    # Create results directory if it doesn't exist
-    os.makedirs('./results', exist_ok=True)
+    try:
+        # Generate plots
+        metric_images = plot_model_metrics(model_results)
+        regression_images = build_regression_models(model_results)
+        
+        # Get server URL for image paths
+        static_dir = os.path.join(os.getcwd(), 'static')
+        
+        # Create image gallery for Gradio display
+        image_gallery = []
+        if 'avg_response_time' in metric_images:
+            image_gallery.append(metric_images['avg_response_time'])
+        if 'pass_rate' in metric_images:
+            image_gallery.append(metric_images['pass_rate'])
+        if 'ttft' in metric_images:
+            image_gallery.append(metric_images['ttft'])
+        
+        # Add regression images to gallery
+        if 'combined_ttft_regression' in regression_images:
+            image_gallery.append(regression_images['combined_ttft_regression'])
+        if 'combined_response_time_regression' in regression_images:
+            image_gallery.append(regression_images['combined_response_time_regression'])
+        
+        # Add individual model regression plots
+        for model_name in selected_models:
+            regression_key = f'{model_name}_regression'
+            if regression_key in regression_images:
+                image_gallery.append(regression_images[regression_key])
+        
+        # Create markdown content with descriptions
+        markdown_content = f"""
+## Comparing Results for {', '.join(selected_models)}
+
+### Performance Metrics
+
+- **Average response time**: How long it takes each model to generate complete responses
+- **Pass@1 rate**: Percentage of problems the model can solve correctly on the first attempt
+- **Time to first token (TTFT)**: How quickly the model starts generating output
+- **Regression analysis**: How response time and TTFT correlate with tokens
+
+Images are displayed in the gallery below. You can click on them to view in full size.
+"""
+        
+        return markdown_content, image_gallery
     
-    # Plot model metrics comparison
-    plot_model_metrics(model_results)
+    except Exception as e:
+        print(f"Error generating visualizations: {e}")
+        return f"Error generating visualizations: {str(e)}", []
+
+def launch_gradio_interface():
+    """Launch Gradio interface for model visualization"""
+    # Get available models
+    available_models = get_available_models()
     
-    # Build regression models for each model
-    build_regression_models(model_results)
+    # Create static directory for images
+    os.makedirs('static', exist_ok=True)
     
-    print(f"Visualization complete! Generated plots for {len(model_results)} models.")
- 
+    # Define interface
+    with gr.Blocks(title="LLM Evaluation Visualizer", css="#gallery { min-height: 400px; }") as demo:
+        gr.Markdown("# LLM Evaluation Visualizer")
+        gr.Markdown("Select models to compare and visualize results")
+        
+        with gr.Row():
+            if available_models:
+                model_selector = gr.CheckboxGroup(
+                    choices=available_models,
+                    label="Select Models to Compare",
+                    info="Choose at least one model",
+                    value=[available_models[0]] if available_models else None
+                )
+            else:
+                model_selector = gr.CheckboxGroup(
+                    choices=[],
+                    label="Select Models to Compare",
+                    info="No models found in results directory"
+                )
+            visualize_button = gr.Button("Generate Visualizations")
+        
+        output_markdown = gr.Markdown("Select models and click 'Generate Visualizations' to start")
+        
+        # Image gallery for displaying the visualizations
+        gallery = gr.Gallery(
+            label="Visualization Results",
+            show_label=True,
+            elem_id="gallery",
+            columns=2,
+            rows=3,
+            height="auto",
+            object_fit="contain"
+        )
+        
+        visualize_button.click(
+            fn=visualize_models,
+            inputs=[model_selector],
+            outputs=[output_markdown, gallery]
+        )
+    
+    demo.launch(share=False)
+
+def main():
+    # Check if results directory exists
+    if not os.path.exists('./results'):
+        print("Results directory not found. Creating empty directory.")
+        os.makedirs('./results', exist_ok=True)
+    
+    # Get available models
+    available_models = get_available_models()
+    
+    if not available_models:
+        print("No model results found in the results directory!")
+        print("Please add evaluation data to the results directory.")
+    else:
+        print(f"Found {len(available_models)} models: {', '.join(available_models)}")
+    
+    # Launch Gradio interface
+    launch_gradio_interface()
+
 if __name__ == "__main__":
     main()
