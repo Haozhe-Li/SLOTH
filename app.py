@@ -14,7 +14,7 @@ def process_api_info(api_key, api_base_url, model_id):
 
 def update_api_base(provider):
     if provider == "OpenAI":
-        return ""
+        return "https://api.openai.com/v1"
     elif provider == "Groq":
         return "https://api.groq.com/openai/v1"
     elif provider == "Fireworks AI":

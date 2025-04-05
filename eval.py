@@ -21,11 +21,12 @@ class LLMEvaluator:
             temperature (float, optional): Sampling temperature. Defaults to 0.8.
             max_tokens (int, optional): Maximum tokens to generate. Defaults to 512.
         """
+        print(model_id, api_key, api_base, temperature, max_tokens)
         self.model_id = model_id
         self.temperature = temperature
         self.max_tokens = max_tokens
 
-        if not api_base:
+        if 'openai' in api_base:
             self.provider = "openai"
         elif "groq" in api_base:
             self.provider = "groq"
