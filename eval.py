@@ -26,7 +26,7 @@ class LLMEvaluator:
         self.temperature = temperature
         self.max_tokens = max_tokens
 
-        if 'openai' in api_base:
+        if "openai" in api_base:
             self.provider = "openai"
         elif "groq" in api_base:
             self.provider = "groq"
@@ -183,7 +183,7 @@ class LLMEvaluator:
             )
 
             # Add a small delay to avoid rate limiting
-            time.sleep(1)
+            time.sleep(5)
 
         # Save completions to a file in the model-specific directory
         output_file = os.path.join(self.results_dir, "completions.jsonl")
