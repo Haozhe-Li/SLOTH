@@ -9,7 +9,7 @@ from human_eval.evaluation import evaluate_functional_correctness
 
 class LLMEvaluator:
     def __init__(
-        self, model_id, api_key=None, api_base=None, temperature=0.8, max_tokens=512
+        self, model_id, api_key=None, api_base=None, temperature=0.8, max_tokens=512, timesleep=5
     ):
         """
         Initialize the LLM evaluator with model settings and API configuration.
@@ -25,13 +25,14 @@ class LLMEvaluator:
         self.model_id = model_id
         self.temperature = temperature
         self.max_tokens = max_tokens
+        self.timesleep = timesleep
 
-        if "openai" in api_base:
-            self.provider = "openai"
-        elif "groq" in api_base:
+        if "groq" in api_base:
             self.provider = "groq"
         elif "fireworks" in api_base:
             self.provider = "fireworks"
+        if "openai" in api_base:
+            self.provider = "openai"
         else:
             self.provider = "custom"
 
@@ -183,7 +184,7 @@ class LLMEvaluator:
             )
 
             # Add a small delay to avoid rate limiting
-            time.sleep(5)
+            time.sleep(self.timesleep)
 
         # Save completions to a file in the model-specific directory
         output_file = os.path.join(self.results_dir, "completions.jsonl")

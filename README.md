@@ -1,98 +1,80 @@
 # LLM Evaluation Index
+A Python tool to evaluate the performance of Large Language Models (LLMs) across various API providers and dimensions.
 
-A framework for evaluating and benchmarking Large Language Models (LLMs) across various dimensions and tasks.
+## Features
+- Evaluate models on multiple dimensions:
+    - **Average Response Time**: Time taken to generate complete responses.
+    - **Pass@1 Rate**: Percentage of problems solved correctly on the first attempt.
+    - **Time to First Token (TTFT)**: Time taken to start generating output.
+    - **Regression Analysis**: Correlation between response time, TTFT, and token count.
+- User-friendly Gradio interface for evaluation and visualization.
+- Compatible with all OpenAI-like API platforms.
 
-## 📋 Overview
+## Example Results
 
-LLM Evaluation Index provides tools and metrics to assess the performance of different language models on standardized tasks. This project helps researchers and developers compare models systematically and make informed decisions about which models best suit their needs.
+![Average Response Time Comparison](./docs/avg_response_time_comparison.png)
 
-## ✨ Features
+![Combined Response Time Regression](./docs/combined_response_time_regression.png)
 
-- Comprehensive evaluation across multiple dimensions (reasoning, knowledge, safety, etc.)
-- Support for popular LLM frameworks and models
-- Standardized benchmarking datasets
-- Performance visualization and comparison tools
-- Customizable evaluation metrics
+![Combined TTFT Regression](./docs/combined_ttft_regression.png)
 
-## 🚀 Installation
+![Groq Llama 4 Scout 17B 16E Instruct Regression](./docs/groq_llama_4_scout_17b_16e_instruct_regression.png)
 
-Clone the repo and
+![Pass Rate Comparison](./docs/pass_rate_comparison.png)
 
+![TTFT Comparison](./docs/ttft_comparison.png)
+
+## Installation
+### Prerequisites
+- Python 3.8 or higher
+- pip or conda package manager
+
+### Steps
+
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/Haozhe-Li/llm_eval_index.git
+    cd llm_eval_index
+    ```
+
+2. Set up a virtual environment (optional but recommended):
+    ```bash
+    # Using venv
+    python -m venv venv
+    source venv/bin/activate  # On Windows: venv\Scripts\activate
+    
+    # Or using conda
+    conda create -n llm_eval python=3.10
+    conda activate llm_eval
+    ```
+
+3. Install dependencies:
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+4. Configure API keys:
+    Create a `.env` file in the project root and add your API keys:
+    ```env
+    OPENAI_API_KEY=your_openai_api_key
+    GROQ_API_KEY=your_groq_api_key
+    # Add other provider API keys as needed
+    ```
+
+## Evaluation
+
+Run the evaluation:
 ```bash
-# Install dependencies
-pip install -r requirements.txt
+python3 app.py
 ```
 
-## 🔧 Usage
+Access the Gradio interface at `http://localhost:7680` for GUI-based evaluation.
 
-### Basic Evaluation
+## Visualization
 
-```python
-from llm_eval_index import Evaluator
-from llm_eval_index.models import GPT4, LLaMA
-
-# Initialize models
-gpt4 = GPT4(api_key="your-api-key")
-llama = LLaMA(model_path="path/to/model")
-
-# Create evaluator
-evaluator = Evaluator()
-
-# Run benchmark
-results = evaluator.evaluate([gpt4, llama], 
-                            tasks=["reasoning", "knowledge", "coding"],
-                            verbose=True)
-
-# View results
-results.summary()
-results.plot_comparison()
+Visualize the results:
+```bash
+python3 visualize.py
 ```
 
-### Custom Evaluation Tasks
-
-```python
-from llm_eval_index import Task, Evaluator
-
-# Define custom task
-my_task = Task(
-    name="my_custom_task",
-    prompt_template="Solve the following problem: {problem}",
-    evaluation_metric="accuracy",
-    dataset_path="path/to/dataset"
-)
-
-# Run evaluation with custom task
-evaluator = Evaluator()
-results = evaluator.evaluate([model1, model2], tasks=[my_task])
-```
-
-## 📊 Benchmark Results
-
-| Model | Reasoning | Knowledge | Coding | Safety | Average |
-|-------|-----------|-----------|--------|--------|---------|
-| GPT-4 | 92.3      | 89.7      | 95.1   | 88.2   | 91.3    |
-| LLaMA | 85.6      | 82.3      | 79.8   | 84.5   | 83.0    |
-| ...   | ...       | ...       | ...    | ...    | ...     |
-
-## 📚 Documentation
-
-For full documentation, visit [our docs page](https://github.com/yourusername/llm_eval_index/docs).
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-## 📜 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 📞 Contact
-
-- Your Name - [your-email@example.com](mailto:your-email@example.com)
-- Project Link: [https://github.com/yourusername/llm_eval_index](https://github.com/yourusername/llm_eval_index)
+Access the Gradio interface at `http://localhost:7680` for GUI-based visualization.
