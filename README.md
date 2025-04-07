@@ -1,4 +1,4 @@
-# LLM Evaluation Index
+# SLOTH: Speed & Latency Observation Tool for Hosting LLMs
 A Python tool to evaluate the performance of Large Language Models (LLMs) across various API providers and dimensions.
 
 ## Features
