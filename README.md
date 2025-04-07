@@ -1,4 +1,4 @@
-# SLOTH: Speed & Latency Observation Tool for Hosting LLMs
+# SLOTH: Speed & Latency Observation Tool for Hosted LLMs
 A Python tool to evaluate the performance of Large Language Models (LLMs) across various API providers and dimensions.
 
 ## Features
