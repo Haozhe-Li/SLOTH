@@ -174,3 +174,5 @@ cython_debug/
 # ignore .vscode folder
 .vscode/
 
+# static folder
+static/
